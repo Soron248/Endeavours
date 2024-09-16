@@ -14,7 +14,7 @@ export const HeaderSix = () => {
     <>
       <div id="header-fixed-height"></div>
       <header className="header-style-six">
-        <div className="heder-top-wrap">
+        {/* <div className="heder-top-wrap">
           <div className="container">
             <div className="row align-items-center">
               <div className="col-lg-7">
@@ -66,7 +66,7 @@ export const HeaderSix = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div id="sticky-header" className="menu-area">
           <div className="container">
@@ -86,7 +86,7 @@ export const HeaderSix = () => {
                     {/* nav links */}
                     <NavMenus />
 
-                    <div className="header-action d-none d-md-block">
+                    {/* <div className="header-action d-none d-md-block">
                       <ul className="list-wrap">
                         <li className="header-search">
                           <a href="#">
@@ -99,7 +99,7 @@ export const HeaderSix = () => {
                           </Link>
                         </li>
                       </ul>
-                    </div>
+                    </div> */}
                   </nav>
                 </div>
 

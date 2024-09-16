@@ -35,6 +35,7 @@ import ContactPage from "./pages/Contact/ContactPage";
 import { useWow } from "./lib/hooks/useWow";
 import { useAos } from "./lib/hooks/useAos";
 import { useJarallax } from "./lib/hooks/useJarallax";
+import {SERVICES_DETAILS_LIST} from "../src/mocks/services"
 
 function App() {
   useWow();
@@ -63,19 +64,21 @@ function App() {
         <Route path="home-3" element={<HomeThree />} />
         <Route path="home-4" element={<HomeFour />} />
         <Route path="home-5" element={<HomeFive />} /> */}
+
         <Route path="about" element={<AboutPage />} />
-        <Route path="about-2" element={<AboutPageTwo />} />
+        {/* <Route path="about-2" element={<AboutPageTwo />} />
         <Route path="about-3" element={<AboutPageThree />} />
         <Route path="about-4" element={<AboutPageFour />} />
-        <Route path="about-5" element={<AboutPageFive />} />
+        <Route path="about-5" element={<AboutPageFive />} /> */}
+
         <Route path="services" element={<ServicesPage />} />
-        <Route path="services-2" element={<ServicesPageTwo />} />
-        <Route path="services-3" element={<ServicesPageThree />} />
-        <Route path="services-4" element={<ServicesPageFour />} />
+        <Route path="services-2" element={<ServicesDetailsPage data={SERVICES_DETAILS_LIST[1]} />} />
+        <Route path="services-3" element={<ServicesDetailsPage data={SERVICES_DETAILS_LIST[2]} />} />
+        <Route path="services-4" element={<ServicesDetailsPage data={SERVICES_DETAILS_LIST[3]} />} />
         <Route path="services-5" element={<ServicesPageFive />} />
-        <Route path="services-details" element={<ServicesDetailsPage />} />
-        <Route path="services-details-2" element={<ServicesDetailsPageTwo />} />
-        <Route
+        <Route path="services-details" element={<ServicesDetailsPage data={SERVICES_DETAILS_LIST[0]} />} />
+        {/* <Route path="services-details-2" element={<ServicesDetailsPageTwo />} /> */}
+        {/* <Route
           path="services-details-3"
           element={<ServicesDetailsPageThree />}
         />
@@ -86,7 +89,7 @@ function App() {
         <Route
           path="services-details-5"
           element={<ServicesDetailsPageFive />}
-        />
+        /> */}
         <Route path="project-details" element={<ProjectDetailsPage />} />
         <Route path="team-details" element={<TeamDetailsPage />} />
         <Route path="/blog" element={<BlogPage />} />

@@ -1340,12 +1340,22 @@ label {
 	06. Slider
 ===============================*/
 .slider-bg.one {
-  background: url("../images/bgmain.jpg");
+  background: url("../images/bg1.jpg");
   background-size: cover;
   background-position: center;
 }
 .slider-bg.two {
-  background: url("../img/banner/banner_bg02.jpg");
+  background: url("../images/bg2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.slider-bg.three {
+  background: url("../images/bg3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.slider-bg.four {
+  background: url("../images/bg4.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -1384,14 +1394,14 @@ label {
 }
 .slider-content .title {
   font-weight: 800;
-  font-size: 60px;
+  font-size: 40px;
   margin-bottom: 20px;
   line-height: 1;
 }
 .slider-content p {
   color: var(--tg-paragraph-color);
   margin-bottom: 45px;
-  width: 85%;
+  /* width: 95%; */
 }
 .slider-shape {
   position: absolute;
@@ -1802,7 +1812,7 @@ label {
 	08. Breadcrumb
 ===============================*/
 .breadcrumb-bg {
-  background: url("../img/bg/breadcrumb_bg.jpg");
+  background: url("../images/allbg.jpg");
   background-size: cover;
   background-position: center;
   padding: 120px 0 130px;
@@ -1938,7 +1948,7 @@ label {
   border-radius: 4px;
 }
 .section-title .title {
-  font-size: 40px;
+  font-size: 35px;
   margin-bottom: 0;
 }
 .about-content p {
@@ -3371,7 +3381,7 @@ label {
 
 /* features-five */
 .features-bg {
-  background: url('../img/bg/features_bg.jpg');
+  background: url('../images/allbg2.jpg');
   background-size: cover;
   background-position: center;
   padding: 120px 0 80px;
@@ -3757,7 +3767,7 @@ label {
   color: var(--tg-lavender);
 }
 .services-bg {
-  background: url("../img/bg/services_bg.jpg");
+  background: url("../images/sbg.jpg");
   background-size: cover;
   background-position: center;
   padding: 120px 0;
@@ -3869,7 +3879,7 @@ label {
   margin: 0;
   justify-content: center;
   gap: 10px;
-  margin-top: 15px;
+  margin-top: 0;
 }
 .services-active .slick-dots li {
   list-style: none;
@@ -4885,7 +4895,7 @@ label {
 	15. Counter
 ===============================*/
 .counter-bg {
-  background: url("../img/bg/counter_bg.jpg");
+  background: url("../images/srbg.jpg");
   background-size: cover;
   background-position: center;
   padding: 120px 0 90px;
@@ -5750,7 +5760,7 @@ label {
 	19. Request
 ===============================*/
 .request-area.request-bg {
-  background: url("../img/bg/request_bg.jpg");
+  background: url("../images/requestbg.jpg");
   background-position: center;
   background-size: cover;
   padding: 80px 0;
@@ -5880,7 +5890,7 @@ label {
 	20. Team
 ===============================*/
 .team-bg {
-  background: url("../img/bg/team_bg.jpg");
+  background: url("../images/teambg.jpg");
   background-size: cover;
   background-position: center;
   padding: 120px 0 90px;
@@ -7200,7 +7210,7 @@ label {
 	23. Contact
 ===============================*/
 .contact-bg {
-  background: url("../img/bg/contact_bg.jpg");
+  background: url("../images/contactbg.jpg");
   background-size: cover;
   background-position: center;
   padding: 120px 0;
@@ -7321,7 +7331,7 @@ label {
   padding: 120px 0 90px;
 }
 .blog-post-area .blog-bg {
-  background: url("../img/bg/blog_bg.jpg");
+  background: url("../images/allbg2.jpg");
 }
 .blog-post-area .blog-bg {
   background-size: cover;
@@ -8236,12 +8246,20 @@ label {
 	27. Footer
 ===============================*/
 .footer-bg {
-  background: url("../img/bg/footer_bg.jpg");
+  /* background: url("../images/footerbg.jpg"); */
+  background-color: #051433;
   background-position: center;
   background-size: cover;
 }
 .footer-top {
   padding: 100px 0 40px;
+  
+}
+.footer-top .row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 20px; */
 }
 .footer-widget {
   margin-bottom: 40px;

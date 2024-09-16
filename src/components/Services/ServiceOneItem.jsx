@@ -22,9 +22,11 @@ export const ServiceOneItem = ({ service }) => {
         </div>
 
         <ul className="list-wrap">
-          <li>seusmeyd tempose atidim area</li>
-          <li>aliquam duhipsum is simply free</li>
-          <li>Get Life Time Access</li>
+          {service.point && service.point.map((p,i)=>{
+            return(
+              <li key={i}>{p}</li>
+            )
+          })}
         </ul>
       </div>
     </div>

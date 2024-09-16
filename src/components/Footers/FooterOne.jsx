@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { LOGO, W_LOGO } from "../../lib/assets";
+import logo from "../../assets/img/logo/logo.png";
 
 export const FooterOne = () => {
   return (
@@ -45,7 +45,7 @@ export const FooterOne = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-lg-2 col-md-5 col-sm-6">
+              {/* <div className="col-lg-2 col-md-5 col-sm-6">
                 <div className="footer-widget">
                   <h4 className="fw-title">Menu</h4>
                   <div className="footer-link">
@@ -68,8 +68,8 @@ export const FooterOne = () => {
                     </ul>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-5 col-sm-6">
+              </div> */}
+              {/* <div className="col-lg-3 col-md-5 col-sm-6">
                 <div className="footer-widget">
                   <h4 className="fw-title">Quick Links</h4>
                   <div className="footer-link">
@@ -92,7 +92,7 @@ export const FooterOne = () => {
                     </ul>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="col-lg-4 col-md-7">
                 <div className="footer-widget">
                   <h4 className="fw-title">Subscribe to Our Newsletter</h4>
@@ -117,11 +117,11 @@ export const FooterOne = () => {
                 <div className="left-sider">
                   <div className="f-logo">
                     <Link to="/">
-                      <img src={W_LOGO} alt="" />
+                      <img src={logo} alt="logo" />
                     </Link>
                   </div>
                   <div className="copyright-text">
-                    <p>Copyright © gerow | All Right Reserved</p>
+                    <p>Copyright © Endeavours | All Right Reserved</p>
                   </div>
                 </div>
               </div>

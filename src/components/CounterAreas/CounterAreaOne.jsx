@@ -22,10 +22,10 @@ export const CounterAreaOne = () => {
         </div>
       </div>
 
-      <div className="counter-shape-wrap">
+      {/* <div className="counter-shape-wrap">
         <img src={COUNTER_SHAPE01} alt="" className="animationFramesOne" />
         <img src={COUNTER_SHAPE02} alt="" className="animationFramesOne" />
-      </div>
+      </div> */}
     </section>
   );
 };

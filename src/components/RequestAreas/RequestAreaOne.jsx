@@ -26,18 +26,23 @@ export const RequestAreaOne = () => {
                   <a href="tel:0123456789">+123 8989 444</a>
                 </div>
               </div>
-              <div className="request-btn">
-                <Link to="/contact" className="btn">
-                  Request a Schedule
-                </Link>
+
+              <div className="request-contact">
+                <div className="icon">
+                  <i className="flaticon-mail"></i>
+                </div>
+                <div className="content">
+                  <span>Mail us</span>
+                  <a href="mailto:endeavourscorporationltd@gmail.com">endeavourscorporationltd@gmail.com</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="request-shape">
+      {/* <div className="request-shape">
         <img src={REQUEST_SHAPE} alt="" />
-      </div>
+      </div> */}
     </section>
   );
 };

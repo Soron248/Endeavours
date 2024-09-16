@@ -36,8 +36,7 @@ export const FaqAreaOne = () => {
                 </h2>
               </div>
               <p>
-                Ever find yourself staring at your computer s good consulting
-                slogan to come to mind? Oftentimes.
+              Trust us to deliver tailored solutions that drive success and optimize performance.
               </p>
 
               <div className="accordion-wrap">
@@ -52,7 +51,7 @@ export const FaqAreaOne = () => {
                         aria-expanded="true"
                         aria-controls="collapseOne"
                       >
-                        Interdum et malesuada fames ac ante ipsum
+                       Targeted Growth Strategies
                       </button>
                     </h2>
                     <div
@@ -62,9 +61,7 @@ export const FaqAreaOne = () => {
                     >
                       <div className="accordion-body">
                         <p>
-                          Ever find yourself staring at your computer screen a
-                          good consulting slogan to coind yourself sta your
-                          computer screen a good consulting slogan.
+                        Our digital marketing and consultancy services are designed to drive measurable growth and maximize your business potential.
                         </p>
                       </div>
                     </div>
@@ -79,7 +76,7 @@ export const FaqAreaOne = () => {
                         aria-expanded="false"
                         aria-controls="collapseTwo"
                       >
-                        Interdum et malesuada fames ac ante ipsum
+                        Customized Web Solutions
                       </button>
                     </h2>
                     <div
@@ -89,9 +86,7 @@ export const FaqAreaOne = () => {
                     >
                       <div className="accordion-body">
                         <p>
-                          Ever find yourself staring at your computer screen a
-                          good consulting slogan to coind yourself sta your
-                          computer screen a good consulting slogan.
+                        We offer tailored web design services that enhance user experience and reflect your brand’s unique identity.
                         </p>
                       </div>
                     </div>
@@ -106,7 +101,7 @@ export const FaqAreaOne = () => {
                         aria-expanded="false"
                         aria-controls="collapseThree"
                       >
-                        Interdum et malesuada fames ac ante ipsum
+                        Streamlined Import Processes: 
                       </button>
                     </h2>
                     <div
@@ -116,9 +111,7 @@ export const FaqAreaOne = () => {
                     >
                       <div className="accordion-body">
                         <p>
-                          Ever find yourself staring at your computer screen a
-                          good consulting slogan to coind yourself sta your
-                          computer screen a good consulting slogan.
+                        Our import consultancy ensures efficient, compliant, and cost-effective international trade solutions for your business.
                         </p>
                       </div>
                     </div>

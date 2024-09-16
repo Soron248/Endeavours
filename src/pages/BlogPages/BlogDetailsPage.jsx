@@ -60,21 +60,21 @@ const BlogDetailsPage = () => {
             clients areaneed specia- list advice beyond the scope of our own
             expertise.
           </p>
-          <blockquote>
+          {/* <blockquote>
             <p>
               “ urabitur varius eros rutrum consequat Mauris aewa sollicitudin
               enim condimentum luctus enim justo non molestie nisl ”
             </p>
-          </blockquote>
-          <h4 className="title-two">Speed Optimized</h4>
+          </blockquote> */}
+          {/* <h4 className="title-two">Speed Optimized</h4>
           <p>
             when an unknown printer took a galley of type and scrambled it to
             make a type specimen bookhas a not only five centuries, but also the
             leap into electronic typesetting, remaining essentially unchan
             galley of type and scrambled it to make a type specimen book.
-          </p>
+          </p> */}
 
-          <div className="bd-inner-wrap">
+          {/* <div className="bd-inner-wrap">
             <div className="row align-items-center">
               <div className="col-46">
                 <div className="thumb">
@@ -113,14 +113,14 @@ const BlogDetailsPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <p>
+          {/* <p>
             when an unknown printer took a galley of type and scrambled it to
             make a type specimen bookhas a not only five centuries, but also the
             leap into electronic typesetting, remaining essentially unchan
             galley of type and scrambled it to make a type specimen book.
-          </p>
+          </p> */}
           <div className="bd-content-bottom">
             <div className="row align-items-center">
               <div className="col-md-7">

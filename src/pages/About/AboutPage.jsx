@@ -19,7 +19,7 @@ const AboutPage = () => {
       <TeamAreaThree />
 
       {/* testimonial-area  */}
-      <TestimonialAreaOne />
+      {/* <TestimonialAreaOne /> */}
 
       {/* brand-area */}
       <BrandSix />

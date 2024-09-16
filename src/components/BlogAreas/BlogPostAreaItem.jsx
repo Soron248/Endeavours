@@ -2,30 +2,44 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const BlogPostAreaItem = ({ blog }) => {
+  let dateString = blog.created_at;
+
+// Convert to a JavaScript Date object
+let date = new Date(dateString);
+
+// Define an array of month names
+const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'Jun.', 'Jul.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+
+// Get the day and month from the date object
+const day = date.getDate();
+const month = months[date.getMonth()]; // getMonth() returns a zero-based index
+
+// Format the date as "14, Sept."
+const formattedDate = `${day}, ${month}`;
   return (
     <div className="blog-post-item">
       <div className="blog-post-thumb">
-        <Link to={blog.href}>
-          <img src={blog.src4} alt="" />
+        <Link to={"/blog-details"}>
+          <img src={blog.featured_images[0].blog_image} alt="" />
         </Link>
 
         <span className="date">
-          <strong>25</strong>Jan
+          <strong>{day}</strong>{month}
         </span>
       </div>
 
       <div className="blog-post-content">
         <Link to={blog.tagHref} className="tag">
-          {blog.tag3}
+          {blog.tags[0].name}
         </Link>
 
         <h2 className="title">
-          <Link to={blog.href}>{blog.title}</Link>
+          <Link to={"/blog-details"}>{blog.title}</Link>
         </h2>
 
-        <p>{blog.subtitle}</p>
+        <p>{blog.content}</p>
 
-        <Link to={blog.href} className="link-btn">
+        <Link to={"/blog-details"} className="link-btn">
           Read More <i className="flaticon-right-arrow"></i>
         </Link>
       </div>

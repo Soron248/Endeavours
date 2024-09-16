@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,useLocation  } from "react-router-dom";
 import cn from "classnames";
 import { SERVICES_DETAILS01 } from "../../lib/assets";
 
@@ -8,14 +8,12 @@ export const ServicesDetailsSidebar = ({
   hideTitle = false,
 }) => {
   const services = [
-    { label: "business Analysis", href: "/services-details" },
-    { label: "Tax Strategy", href: "/services-details" },
-    { label: "Financial Advisory", href: "/services-details" },
-    { label: "business Growth", href: "/services-details" },
-    { label: "Innovation Idea", href: "/services-details" },
-    { label: "Market Research", href: "/services-details" },
+    { label: "Digital Marketing", href: "/services-details" },
+    { label: "Web Development", href: "/services-2" },
+    { label: "Business Consultancy", href: "/services-3" },
+    { label: "Import consultancy", href: "/services-4" },
   ];
-
+  const location = useLocation(); // get the current location
   return (
     <aside className="services-sidebar">
       {/* Our Services */}
@@ -23,7 +21,7 @@ export const ServicesDetailsSidebar = ({
         <div className="services-cat-list mb-30">
           <ul className="list-wrap">
             {services.map((item, idx) => (
-              <li key={item.label} className={cn({ active: idx == 0 })}>
+              <li key={item.label} className={cn({ active: location.pathname === item.href })}>
                 <Link to={item.href}>
                   {item.label} <i className="flaticon-right-arrow"></i>
                 </Link>
@@ -49,7 +47,7 @@ export const ServicesDetailsSidebar = ({
       )}
 
       {/* Brochure */}
-      <div className="services-widget">
+      {/* <div className="services-widget">
         <h4 className="sw-title">Brochure</h4>
         <div className="services-brochure-wrap">
           <p>when an unknown printer took ga lley offer typey anddey.</p>
@@ -70,7 +68,7 @@ export const ServicesDetailsSidebar = ({
             <i className="far fa-file-alt"></i>DOC. Download
           </a>
         </div>
-      </div>
+      </div> */}
 
       {/* contact */}
       {hideContact ? null : (
@@ -83,7 +81,7 @@ export const ServicesDetailsSidebar = ({
       )}
 
       {/* Get A Free Quote */}
-      <div className="services-widget">
+      {/* <div className="services-widget">
         <h4 className="sw-title">Get a Free Quote</h4>
         <div className="services-widget-form">
           <form action="#">
@@ -104,7 +102,7 @@ export const ServicesDetailsSidebar = ({
             </button>
           </form>
         </div>
-      </div>
+      </div> */}
     </aside>
   );
 };

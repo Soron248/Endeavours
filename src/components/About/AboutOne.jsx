@@ -22,14 +22,11 @@ export const AboutOne = () => {
                   What We are Doing
                 </span>
                 <h2 className="title tg-element-title">
-                  Changing The Way To Do Best Business Solutions
+                Empowering Businesses with Comprehensive Solutions: Digital Marketing, Web Design, Consultancy, and Import Services
                 </h2>
               </div>
               <p>
-              we are dedicated to driving business success through
-innovative solutions and comprehensive support. With expertise across various
-sectors, we help businesses navigate the complexities of the modern market, ensuring
-they have the tools and strategies needed to thrive.
+              Offering expert digital marketing, web design, and consultancy services. Your trusted partner in business growth and global trade solutions
               </p>
             </div>
           </div>

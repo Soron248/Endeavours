@@ -7,6 +7,10 @@ import {
   INNER_ABOUT_SHAPE01,
 } from "../../lib/assets";
 
+import a1 from "../../assets/images/about7A.jpg"
+import a2 from "../../assets/images/about7B.jpg"
+import a3 from "../../assets/images/dots.png"
+
 export const AboutSeven = () => {
   return (
     <section className="about-area-seven pt-120 pb-120">
@@ -15,24 +19,24 @@ export const AboutSeven = () => {
           <div className="col-lg-6 col-md-9 order-0 order-lg-2">
             <div className="about-img-seven-wrap">
               <img
-                src={INNER_ABOUT_IMG01}
+                src={a2}
                 alt=""
                 data-aos="fade-right"
                 data-aos-delay="0"
               />
               <img
-                src={INNER_ABOUT_IMG02}
+                src={a1}
                 alt=""
                 data-aos="fade-up"
                 data-aos-delay="300"
               />
-              <img
-                src={INNER_ABOUT_SHAPE01}
+              {/* <img
+                src={a3}
                 alt=""
                 className="shape"
                 data-aos="zoom-in"
                 data-aos-delay="500"
-              />
+              /> */}
               <div
                 className="experience-wrap"
                 data-aos="fade-left"
@@ -49,13 +53,12 @@ export const AboutSeven = () => {
               <div className="section-title mb-30">
                 <span className="sub-title">Who We are</span>
                 <h2 className="title">
-                  Innovative Business Solutions For Success Company
+                Endeavours Corporation Ltd: Your Ultimate Partner in Digital Marketing,
+                 Web Solutions, and Business Growth
                 </h2>
               </div>
               <p>
-                Morem ipsum dolor sit amet, consectetur adipiscing elita florai
-                psum dolor sit amet consecteture Borem ipsum dolor sitter
-                consectetur adipiscing elita florai psum.
+              With a broad range of services, Endeavours Corporation Ltd. is a full-service solution provider committed to accelerating business progress. We provide a smooth, one-stop services for companies of all kinds, with experience in digital marketing, website development, import consulting, and company development.
               </p>
 
               <div className="success-wrap-two">
@@ -86,9 +89,7 @@ export const AboutSeven = () => {
               </div>
 
               <p className="info-two">
-                Morem ipsum dolor sit amet, consectetur adipiscing elita florai
-                psum dolor sit amet, consecteture. consecteture.Borem ipsum
-                dolor sit amectetur adipiscing.
+              Since our founding, we have collaborated with prominent figures in the Bangladeshi and international industries, offering state-of-the-art solutions that propel success in a cutthroat market. Whether you want to expand into new markets, improve your online presence, or streamline operations, our team of professionals is dedicated to offering creative, effective solutions that support your objectives.
               </p>
 
               <Link to="/contact" className="btn btn-three">

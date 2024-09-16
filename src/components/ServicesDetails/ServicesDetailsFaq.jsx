@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ServicesDetailsFaq = () => {
+export const ServicesDetailsFaq = ({faqn,faqp}) => {
   return (
     <div className="accordion-wrap-three">
       <div className="accordion" id="accordionExample">
@@ -14,7 +14,7 @@ export const ServicesDetailsFaq = () => {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Interdum et malesuada fames ac ante ipsum
+              {faqn[0]}
             </button>
           </h2>
           <div
@@ -24,11 +24,7 @@ export const ServicesDetailsFaq = () => {
           >
             <div className="accordion-body">
               <p>
-                when an unknown printer took a galley of type and scrambled it
-                to make a type specimen bookhas a not only five centuries, but
-                also the leap into electronic typesetting, remaining essentially
-                unchan galley of type and scrambled it to make a type specimen
-                book.
+               {faqp[0]}
               </p>
             </div>
           </div>
@@ -43,7 +39,7 @@ export const ServicesDetailsFaq = () => {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Interdum et malesuada fames ac ante ipsum
+              {faqn[1]}
             </button>
           </h2>
           <div
@@ -53,11 +49,7 @@ export const ServicesDetailsFaq = () => {
           >
             <div className="accordion-body">
               <p>
-                when an unknown printer took a galley of type and scrambled it
-                to make a type specimen bookhas a not only five centuries, but
-                also the leap into electronic typesetting, remaining essentially
-                unchan galley of type and scrambled it to make a type specimen
-                book.
+              {faqp[1]}
               </p>
             </div>
           </div>
@@ -72,7 +64,7 @@ export const ServicesDetailsFaq = () => {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Interdum et fames ac ante ipsum
+              {faqn[2]}
             </button>
           </h2>
           <div
@@ -82,11 +74,7 @@ export const ServicesDetailsFaq = () => {
           >
             <div className="accordion-body">
               <p>
-                when an unknown printer took a galley of type and scrambled it
-                to make a type specimen bookhas a not only five centuries, but
-                also the leap into electronic typesetting, remaining essentially
-                unchan galley of type and scrambled it to make a type specimen
-                book.
+              {faqp[2]}
               </p>
             </div>
           </div>

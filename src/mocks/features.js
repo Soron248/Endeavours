@@ -82,19 +82,19 @@ export const FEATURE_ONE_LIST = [
   {
     id: 1,
     icon: "flaticon-inspiration",
-    title: "Innovation Ideas",
-    subtitle: "Transforming Vision into Reality.",
+    title: "Digital Marketing",
+    subtitle: "It enables firms to reach a larger audience, interact with customers in real time, monitor success, and customize plans for optimal effect, digital marketing is crucial. In the current digital era, it helps firms remain competitive and is both quantifiable and affordable.",
   },
   {
     id: 2,
     icon: "flaticon-puzzle-piece",
-    title: "Quality Services",
-    subtitle: "Exceptional Quality, Unmatched Excellence.",
+    title: "Web Development",
+    subtitle: "Creating trust and offering a smooth user experience on a website is crucial for drawing in and keeping visitors. It acts as the digital face of your company, encouraging engagement and growth.",
   },
   {
     id: 3,
     icon: "flaticon-profit",
-    title: "Business Growth",
-    subtitle: "Empowering Your Success Journey.",
+    title: "Business consultancy",
+    subtitle: "Expert consultancy is crucial in business as it provides specialized knowledge, helping to identify opportunities, optimize operations, and overcome challenges. With expert guidance, businesses can make informed decisions, reduce risks, and achieve sustainable growth.",
   },
 ];

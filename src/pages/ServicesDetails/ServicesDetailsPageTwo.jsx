@@ -17,8 +17,7 @@ const ServicesDetailsPageTwo = () => {
         <div className="services-details-wrap">
           <div className="services-details-content">
             <h2 className="title">
-              We help our clients identify their they area issues develop
-              solutions and take action
+              web
             </h2>
             <p>
               eed a little help from our friends from time to time. Although we

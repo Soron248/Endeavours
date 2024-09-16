@@ -6,35 +6,25 @@ import { ServicesDetailsWrapper } from "../../components/ServicesDetails/Service
 import { VideoPlayerOne } from "../../components/VideoPlayers/VideoPlayerOne";
 import { BrandSeven } from "../../components/Brand/BrandSeven";
 
-const ServicesDetailsPage = () => {
+const ServicesDetailsPage = ({data}) => {
   return (
     <Layout breadcrumb={"Services"} title={"Service Details"}>
       {/* services-details-area */}
       <ServicesDetailsWrapper hideContact hideTitle>
         <div className="services-details-wrap">
           <div className="services-details-thumb">
-            <img src={SERVICES_DETAILS01} alt="" />
+            <img src={data.imgsrc} alt="" />
           </div>
 
           <div className="services-details-content">
             <h2 className="title">
-              We help our clients identify their they area issues develop
-              solutions and take action
+              {data.headingOne}
             </h2>
             <p>
-              eed a little help from our friends from time to time. Although we
-              offer the one-stop convenience of annery integrated range of
-              legal, financial services under one roof, there are occasions when
-              our clients areaneed specia- list advice beyond the scope of our
-              own expertise. That’s why we’ve developed close working
-              relationships with a number of strategic partner.
+              {data.subOne}
             </p>
             <p>
-              when an unknown printer took a galley of type and scrambled it to
-              make a type specimen bookhas survived not only five centuries, but
-              also the leap into electronic typesetting, remaining essentially
-              unchan galley of type and scrambled it to make a type specimen
-              book.
+              {data.subTwo}
             </p>
 
             <div className="sd-inner-wrap">
@@ -42,35 +32,35 @@ const ServicesDetailsPage = () => {
                 <div className="col-56">
                   <div className="content">
                     <h3 className="title-two">
-                      Raise capital faster & negotiate on your own terms
+                      {data.headingTwo}
                     </h3>
                     <p>
-                      when an unknown printer took a galley offer typey anddey
-                      scrambled make a type specimen bookhas survived not only
-                      five centuries but also.
+                      {data.subThree}
                     </p>
-                    <ul className="list-wrap">
+
+                        <ul className="list-wrap" >
                       <li>
                         <img src={CHECK_ICON} alt="" />
-                        100% Better results
+                        {data.point[0]}
                       </li>
                       <li>
                         <img src={CHECK_ICON} alt="" />
-                        Valuable Ideas
+                        {data.point[1]}
                       </li>
                       <li>
                         <img src={CHECK_ICON} alt="" />
-                        Budget Friendly Theme
+                        {data.point[2]}
                       </li>
                       <li>
                         <img src={CHECK_ICON} alt="" />
-                        Happy Customers
+                        {data.point[3]}
                       </li>
                     </ul>
+
                   </div>
                 </div>
 
-                <div className="col-44">
+                {/* <div className="col-44">
                   <div className="thumb">
                     <img src={SD_VIDEO_IMG} alt="" />
 
@@ -78,28 +68,25 @@ const ServicesDetailsPage = () => {
                       src={"https://www.youtube.com/watch?v=6mkoGSqTqFI"}
                     />
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
             <p>
-              when an unknown printer took a galley of type and scrambled it to
-              make a type specimen bookhas a not only five centuries, but also
-              the leap into electronic typesetting, remaining essentially unchan
-              galley of type and scrambled it to make a type specimen book.
+              {data.subFour}
             </p>
             <div className="company-benefit-wrap">
-              <h2 className="title-two">Company Key Benefits</h2>
-              <p>
+              <h2 className="title-two">{data.faqHead}</h2>
+              {/* <p>
                 when an unknown printer took a galley of type and scrambled it
                 to make a type specimen bookhas a not only five centuries, but
                 also the leap into electronic typesetting, remaining essentially
                 unchan galley of type and scrambled it to make a type specimen
                 book.
-              </p>
+              </p> */}
 
               {/* faq accordion */}
-              <ServicesDetailsFaq />
+              <ServicesDetailsFaq faqn={data.faqName} faqp={data.faqPoint} />
             </div>
           </div>
         </div>

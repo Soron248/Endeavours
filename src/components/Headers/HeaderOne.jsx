@@ -84,12 +84,12 @@ export const HeaderOne = () => {
                   {/* nav links */}
                   <NavMenus />
 
-                  <div className="header-action d-none d-md-block">
+                  {/* <div className="header-action d-none d-md-block">
                     <ul className="list-wrap">
                       <li className="header-search">
-                        {/* <a href="#">
+                        <a href="#">
                           <i className="flaticon-search"></i>
-                        </a> */}
+                        </a>
                       </li>
                       <li className="header-btn">
                         <Link to="/contact" className="btn btn-two">
@@ -97,7 +97,7 @@ export const HeaderOne = () => {
                         </Link>
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </nav>
               </div>
 

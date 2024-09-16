@@ -37,7 +37,7 @@ const HomeFive = () => {
       <CounterAreaOne />
 
       {/* project-area */}
-      <ProjectAreaOne />
+      {/* <ProjectAreaOne /> */}
 
       {/* faq-area */}
       <FaqAreaOne />
@@ -49,10 +49,10 @@ const HomeFive = () => {
       <TeamAreaOne />
 
       {/* testimonial-area */}
-      <TestimonialAreaOne />
+      {/* <TestimonialAreaOne /> */}
 
       {/* pricing-area */}
-      <PricingAreaOne />
+      {/* <PricingAreaOne /> */}
 
       {/* contact-area */}
       <ContactAreaOne />

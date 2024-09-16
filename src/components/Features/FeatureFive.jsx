@@ -34,10 +34,10 @@ export const FeatureFive = () => {
         </div>
       </div>
 
-      <div className="features-shape-wrap">
+      {/* <div className="features-shape-wrap">
         <img src={FEATURES_SHAPE01} alt="" />
         <img src={FEATURES_SHAPE02} alt="" />
-      </div>
+      </div> */}
     </section>
   );
 };

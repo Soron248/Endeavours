@@ -11,9 +11,9 @@ export const BlogPageWrapper = ({ children }) => {
             <div className="col-71">{children}</div>
 
             {/* sidebar */}
-            <div className="col-29">
+            {/* <div className="col-29">
               <BlogPageSidebar />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

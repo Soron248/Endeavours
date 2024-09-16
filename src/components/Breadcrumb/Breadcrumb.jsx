@@ -26,10 +26,10 @@ export const Breadcrumb = ({ text, title }) => {
         </div>
       </div>
 
-      <div className="breadcrumb-shape-wrap">
+      {/* <div className="breadcrumb-shape-wrap">
         <img src={BREADCRUMB_SHAPE01} alt="" />
         <img src={BREADCRUMB_SHAPE02} alt="" />
-      </div>
+      </div> */}
     </section>
   );
 };

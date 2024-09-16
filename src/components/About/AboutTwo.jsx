@@ -36,28 +36,26 @@ export const AboutTwo = () => {
                 </h2>
               </div>
               <p>
-                Morem ipsum dolor sit amet, consectetur adipiscing elita florai
-                psum dolor sit amet, consecteture.Borem ipsum dolor sit amet,
-                consectetur adipiscing elita florai psum.
+              We are a dynamic team of specialists committed to promoting corporate success with cutting-edge solutions. With skills in digital marketing, site design, business consulting, and import services, we assist businesses in navigating the difficulties of today's business world. 
               </p>
 
               <div className="about-list">
                 <ul className="list-wrap">
                   <li>
                     <img src={CHECK_ICON} alt="" />
-                    100% Better results
+                    Personalized Support 
                   </li>
                   <li>
                     <img src={CHECK_ICON} alt="" />
-                    Valuable Ideas
+                    Enhanced Brand Visibility 
                   </li>
                   <li>
                     <img src={CHECK_ICON} alt="" />
-                    Budget Friendly Work
+                    Seamless Collaboration 
                   </li>
                   <li>
                     <img src={CHECK_ICON} alt="" />
-                    Happy Customers
+                    Guaranteed Results
                   </li>
                 </ul>
               </div>

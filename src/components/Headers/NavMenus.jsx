@@ -12,7 +12,7 @@ export const NavMenus = () => {
   const homeLinkList = [
     {
       to: "/",
-      title: "Finance",
+      title: "Business",
     },
     {
       to: "/home-2",
@@ -121,18 +121,19 @@ export const NavMenus = () => {
             active: aboutLinkList.map((el) => el.to).includes(pathname),
           })}
         >
-          <a href="#">About Us</a>
+          {/* <a href="#">About Us</a>
           <ul className="sub-menu">
             {aboutLinkList.map((el) => (
               <li key={el.to} className={cn(isActiveCn(el.to))}>
-                <Link to={el.to}>{el.title}</Link>
               </li>
             ))}
-          </ul>
+          </ul> */}
+                <Link to="/about">About Us</Link>
+
         </li>
 
         {/* pages */}
-        <li
+        {/* <li
           className={cn("menu-item-has-children", {
             active: [
               ...servicesLinkList,
@@ -145,7 +146,7 @@ export const NavMenus = () => {
               .includes(pathname),
           })}
         >
-          <a href="#">Pages</a>
+          <a href="#">Services</a>
           <ul className="sub-menu">
             <li
               className={cn("menu-item-has-children", {
@@ -154,7 +155,7 @@ export const NavMenus = () => {
                   .includes(pathname),
               })}
             >
-              <Link to="/services">Services</Link>
+              <Link to="/services-details">Services</Link>
               <ul className="sub-menu">
                 {servicesLinkList.map((el) => (
                   <li key={el.to} className={cn(isActiveCn(el.to))}>
@@ -189,6 +190,22 @@ export const NavMenus = () => {
               <Link to="/error">404 Error</Link>
             </li>
           </ul>
+        </li> */}
+        {/* services */}
+        <li
+          className={cn("menu-item-has-children", {
+            active: aboutLinkList.map((el) => el.to).includes(pathname),
+          })}
+        >
+          {/* <a href="#">About Us</a>
+          <ul className="sub-menu">
+            {aboutLinkList.map((el) => (
+              <li key={el.to} className={cn(isActiveCn(el.to))}>
+              </li>
+            ))}
+          </ul> */}
+                <Link to="/services-details">Services</Link>
+
         </li>
 
         {/* blog */}
