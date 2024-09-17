@@ -57,10 +57,18 @@ export const AboutTwo = () => {
                     <img src={CHECK_ICON} alt="" />
                     Guaranteed Results
                   </li>
+                  <li>
+                    <img src={CHECK_ICON} alt="" />
+                    Driven by Innovation
+                  </li>
+                  <li>
+                    <img src={CHECK_ICON} alt="" />
+                    Inspired by Ambition
+                  </li>
                 </ul>
               </div>
 
-              <div className="success-wrap">
+              {/* <div className="success-wrap">
                 <ul className="list-wrap">
                   <li>
                     <h2 className="count">+150,000</h2>
@@ -71,7 +79,7 @@ export const AboutTwo = () => {
                     <p>Increase in sales</p>
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
               <Link to="/about" className="btn transparent-btn">
                 Get Started With Us

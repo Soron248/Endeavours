@@ -60,7 +60,6 @@ export const ServiceOne = () => {
                 Spotlight Some Most <br />
                 Important Features We Have
               </h2>
-              <p>Borem ipsum dolor sit amet consectetur adipiscing elita</p>
             </div>
           </div>
         </div>

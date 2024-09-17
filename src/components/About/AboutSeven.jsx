@@ -42,8 +42,8 @@ export const AboutSeven = () => {
                 data-aos="fade-left"
                 data-aos-delay="0"
               >
-                <h2 className="title">25</h2>
-                <p>Years Of Experience</p>
+                <h2 className="title">Fueling</h2>
+                <p>Growth and Creativity</p>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@ export const AboutSeven = () => {
               With a broad range of services, Endeavours Corporation Ltd. is a full-service solution provider committed to accelerating business progress. We provide a smooth, one-stop services for companies of all kinds, with experience in digital marketing, website development, import consulting, and company development.
               </p>
 
-              <div className="success-wrap-two">
+              {/* <div className="success-wrap-two">
                 <ul className="list-wrap">
                   <li>
                     <div className="icon">
@@ -86,7 +86,7 @@ export const AboutSeven = () => {
                     </div>
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
               <p className="info-two">
               Since our founding, we have collaborated with prominent figures in the Bangladeshi and international industries, offering state-of-the-art solutions that propel success in a cutthroat market. Whether you want to expand into new markets, improve your online presence, or streamline operations, our team of professionals is dedicated to offering creative, effective solutions that support your objectives.

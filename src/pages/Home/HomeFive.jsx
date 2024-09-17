@@ -34,7 +34,7 @@ const HomeFive = () => {
       <ServiceOne />
 
       {/* counter-area */}
-      <CounterAreaOne />
+      {/* <CounterAreaOne /> */}
 
       {/* project-area */}
       {/* <ProjectAreaOne /> */}
@@ -61,7 +61,7 @@ const HomeFive = () => {
       <BlogPostArea />
 
       {/* brand-area */}
-      <BrandOne />
+      {/* <BrandOne /> */}
     </Layout>
   );
 };

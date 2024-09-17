@@ -64,8 +64,7 @@ export const ContactAreaOne = () => {
                 </h2>
               </div>
               <p>
-                Ever find yourself staring at your computer screen a good
-                consulting slogan to come to mind? Oftentimes.
+              Get in Touch for Personalized Support
               </p>
             </div>
           </div>

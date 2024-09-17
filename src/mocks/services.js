@@ -163,7 +163,7 @@ export const SERVICES_ONE_LIST = [
     title: "Import consultancy",
     subtitle:
       "When An Unknown Printer Took Gerty Galley Types Awecr Erambled Type Specimen Book.",
-      point: ["Market Research and Analysis","Trade Finance and Payment Solutions","Regulatory Compliance","Logistics and Supply Chain Management"]
+      point: ["Market Research and Analysis","Trade Finance and Payment Solutions","Regulatory Compliance","Logistics and Supply"]
   },
 ];
 
