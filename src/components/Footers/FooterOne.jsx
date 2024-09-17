@@ -19,7 +19,7 @@ export const FooterOne = () => {
                           <i className="flaticon-pin"></i>
                         </div>
                         <div className="content">
-                          <p>58 Street Commercial Road Fratton, Australia</p>
+                          <p>Khilkhet, Dhaka</p>
                         </div>
                       </li>
                       <li>
@@ -27,7 +27,7 @@ export const FooterOne = () => {
                           <i className="flaticon-phone-call"></i>
                         </div>
                         <div className="content">
-                          <a href="tel:0123456789">+123 888 9999</a>
+                          <a href="tel:0123456789">+012 3456 789</a>
                         </div>
                       </li>
                       <li>
@@ -36,7 +36,7 @@ export const FooterOne = () => {
                         </div>
                         <div className="content">
                           <p>
-                            Mon – Sat: 8 am – 5 pm, <br /> Sunday:{" "}
+                            thurs – Sat: 10 am – 6 pm, <br /> Friday:{" "}
                             <span>CLOSED</span>
                           </p>
                         </div>
@@ -129,28 +129,28 @@ export const FooterOne = () => {
                 <div className="footer-social">
                   <ul className="list-wrap">
                     <li>
-                      <a href="#">
+                      <a href="https://www.facebook.com/share/B8D99SA7vM7nwGNV/?mibextid=qi2Omg">
                         <i className="fab fa-facebook-f"></i>
                       </a>
                     </li>
-                    <li>
+                    {/* <li>
                       <a href="#">
                         <i className="fab fa-twitter"></i>
                       </a>
-                    </li>
+                    </li> */}
                     <li>
-                      <a href="#">
+                      <a href="https://www.instagram.com/endeavoursbd?igsh=MTVtY21lOHBqc3F0bQ==">
                         <i className="fab fa-instagram"></i>
                       </a>
                     </li>
-                    <li>
+                    {/* <li>
                       <a href="#">
                         <i className="fab fa-pinterest-p"></i>
                       </a>
-                    </li>
+                    </li> */}
                     <li>
-                      <a href="#">
-                        <i className="fab fa-youtube"></i>
+                      <a href="https://www.linkedin.com/company/endeavoursbd/">
+                        <i className="fab fa-linkedin"></i>
                       </a>
                     </li>
                   </ul>

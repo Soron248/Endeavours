@@ -5,6 +5,7 @@ import { FeatureFive } from "../../components/Features/FeatureFive";
 import { TeamAreaThree } from "../../components/TeamAreas/TeamAreaThree";
 import { TestimonialAreaOne } from "../../components/TestimonialAreas/TestimonialAreaOne";
 import { BrandSix } from "../../components/Brand/BrandSix";
+import { TeamAreaOne } from "../../components/TeamAreas/TeamAreaOne";
 
 const AboutPage = () => {
   return (
@@ -16,7 +17,7 @@ const AboutPage = () => {
       <FeatureFive />
 
       {/* team-area */}
-      <TeamAreaThree />
+      <TeamAreaOne />
 
       {/* testimonial-area  */}
       {/* <TestimonialAreaOne /> */}

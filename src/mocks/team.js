@@ -24,6 +24,8 @@ import {
 import sajal from "../assets/images/sajal.jpg"
 import taufiq from "../assets/images/toufiq.jpg"
 import srn from "../assets/images/srn.jpg"
+import shrv from "../assets/images/shourav.jpg"
+import bkrm from "../assets/images/bikrom.jpg"
 
 export const TEAM_LIST_TWO = [
   {
@@ -167,15 +169,22 @@ export const TEAM_LIST_ONE = [
   {
     id: 3,
     href: "/team-details",
+    src: bkrm,
+    title: "Pronab Halder",
+    designation: "CTO",
+  },
+  {
+    id: 4,
+    href: "/team-details",
     src: srn,
     title: "Eftekhar Soron",
     designation: "Creative Coder",
   },
   {
-    id: 4,
+    id: 5,
     href: "/team-details",
-    src: TEAM_IMG04,
-    title: "Sabbir Hossen",
-    designation: "Digital Marketing Specialist",
+    src: shrv,
+    title: "Sourov Sarker",
+    designation: "Creative coder",
   },
 ];

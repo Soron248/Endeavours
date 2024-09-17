@@ -6,22 +6,27 @@ import {
   FAQ_SHAPE03,
 } from "../../lib/assets";
 
+import faq1 from "../../assets/images/faq1.jpg"
+import faq2 from "../../assets/images/faq2.jpg"
+import faql from "../../assets/images/faql.jpg"
+import faqr from "../../assets/images/faqr.jpg"
+
 export const FaqAreaOne = () => {
   return (
     <section className="faq-area">
       <div className="faq-bg-shape"></div>
 
       <div className="faq-shape-wrap">
-        <img src={FAQ_SHAPE02} alt="" />
-        <img src={FAQ_SHAPE03} alt="" />
+        {/* <img src={faqr} alt="" /> */}
+        {/* <img src={FAQ_SHAPE03} alt="" /> */}
       </div>
 
       <div className="container">
         <div className="row align-items-end justify-content-center">
           <div className="col-lg-6 col-md-9">
             <div className="faq-img-wrap">
-              <img src={FAQ_IMG01} alt="" />
-              <img src={FAQ_IMG02} alt="" data-parallax='{"y" : 100 }' />
+              <img src={faq1} alt="" />
+              <img src={faq2} alt="" data-parallax='{"y" : 100 }' />
             </div>
           </div>
 

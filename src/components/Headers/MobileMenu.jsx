@@ -62,31 +62,31 @@ export const MobileMenu = () => {
           </div>
           <div className="social-links">
             <ul className="clearfix list-wrap">
-              <li>
-                <a href="#">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fab fa-youtube"></i>
-                </a>
-              </li>
+            <li>
+                      <a href="https://www.facebook.com/share/B8D99SA7vM7nwGNV/?mibextid=qi2Omg">
+                        <i className="fab fa-facebook-f"></i>
+                      </a>
+                    </li>
+                    {/* <li>
+                      <a href="#">
+                        <i className="fab fa-twitter"></i>
+                      </a>
+                    </li> */}
+                    <li>
+                      <a href="https://www.instagram.com/endeavoursbd?igsh=MTVtY21lOHBqc3F0bQ==">
+                        <i className="fab fa-instagram"></i>
+                      </a>
+                    </li>
+                    {/* <li>
+                      <a href="#">
+                        <i className="fab fa-pinterest-p"></i>
+                      </a>
+                    </li> */}
+                    <li>
+                      <a href="https://www.linkedin.com/company/endeavoursbd/">
+                        <i className="fab fa-linkedin"></i>
+                      </a>
+                    </li>
             </ul>
           </div>
         </nav>

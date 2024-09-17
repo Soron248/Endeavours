@@ -9,10 +9,10 @@ export const SliderAreaOne = () => {
   const slick_settings_brands = {
     autoplay: true,
     autoplaySpeed: 3000,
-    dots: true,
+    dots: false,
     fade: true,
     arrows: false,
-    responsive: [{ breakpoint: 767, settings: { dots: true, arrows: false } }],
+    responsive: [{ breakpoint: 767, settings: { dots: false, arrows: false } }],
   };
 
   // Array of slide data
