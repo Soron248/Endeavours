@@ -14,7 +14,7 @@ export const BlogPostArea = () => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log(data)
+        // console.log(data)
         setBlogs(data);  // Store the response array in state
       } catch (error) {
         console.error('Error fetching blogs:', error);
@@ -23,6 +23,7 @@ export const BlogPostArea = () => {
 
     fetchBlogs();
   }, []); 
+  
   return (
     <section className="blog-post-area">
       <div className="blog-bg"></div>

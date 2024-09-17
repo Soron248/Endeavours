@@ -5910,6 +5910,8 @@ label {
   position: relative;
 }
 .team-thumb img {
+  height: 300px;
+  width: 244px;
   border-radius: 8px 8px 180px;
 }
 .team-social .list-wrap {

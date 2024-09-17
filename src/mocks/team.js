@@ -21,6 +21,10 @@ import {
   TEAM_IMG04,
 } from "../lib/assets";
 
+import sajal from "../assets/images/sajal.jpg"
+import taufiq from "../assets/images/toufiq.jpg"
+import srn from "../assets/images/srn.jpg"
+
 export const TEAM_LIST_TWO = [
   {
     id: 1,
@@ -149,29 +153,29 @@ export const TEAM_LIST_ONE = [
   {
     id: 1,
     href: "/team-details",
-    src: TEAM_IMG01,
-    title: "Brooklyn Simmons",
-    designation: "Finance Advisor",
+    src: sajal,
+    title: "Sajal Saha",
+    designation: "Founder & CEO",
   },
   {
     id: 2,
     href: "/team-details",
-    src: TEAM_IMG02,
-    title: "Jenny Wilson",
-    designation: "Finance Advisor",
+    src: taufiq,
+    title: "Toufiq Ul Aalam",
+    designation: "Lead Operation",
   },
   {
     id: 3,
     href: "/team-details",
-    src: TEAM_IMG03,
-    title: "Wade Warren",
-    designation: "Finance Advisor",
+    src: srn,
+    title: "Eftekhar Soron",
+    designation: "Creative Coder",
   },
   {
     id: 4,
     href: "/team-details",
     src: TEAM_IMG04,
-    title: "Marvin McKinney",
-    designation: "Finance Advisor",
+    title: "Sabbir Hossen",
+    designation: "Digital Marketing Specialist",
   },
 ];

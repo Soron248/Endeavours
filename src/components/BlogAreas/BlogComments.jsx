@@ -1,32 +1,48 @@
 import React from "react";
 import { COMMENT01, COMMENT02 } from "../../lib/assets";
 
-export const BlogComments = () => {
+export const BlogComments = ({comments}) => {
+  
   return (
     <div className="comments-wrap">
-      <h3 className="comments-wrap-title">02 Comments</h3>
+      <h3 className="comments-wrap-title">{comments.length} Comments</h3>
       <div className="latest-comments">
         <ul className="list-wrap">
           <li>
-            <div className="comments-box">
-              <div className="comments-avatar">
+            {comments && comments.map((c,i)=>{
+              let dateString = c.created_at;
+
+              // Convert to a JavaScript Date object
+              let date = new Date(dateString);
+              
+              // Define an array of month names
+              const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'Jun.', 'Jul.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+              
+              // Get the day and month from the date object
+              const day = date.getDate();
+              const month = months[date.getMonth()];
+              const year = date.getFullYear(); 
+              return (
+                <div className="comments-box" key={i}>
+              {/* <div className="comments-avatar">
                 <img src={COMMENT01} alt="img" />
-              </div>
+              </div> */}
               <div className="comments-text">
                 <div className="avatar-name">
-                  <h6 className="name">Jessica Rose</h6>
-                  <span className="date">December 27, 2023</span>
+                  <h6 className="name">{c.customer.name}</h6>
+                  <span className="date">{month} {day}, {year}</span>
                 </div>
                 <p>
-                  Finanappreciate your trust greatly Our clients choose dentace
-                  ducts because know we are the best area Awaitingare really.
+                  {c.comment_message}
                 </p>
-                <a href="#" className="reply-btn">
+                {/* <a href="#" className="reply-btn">
                   Reply
-                </a>
+                </a> */}
               </div>
             </div>
-            <ul className="children">
+              )
+            })}
+            {/* <ul className="children">
               <li>
                 <div className="comments-box">
                   <div className="comments-avatar">
@@ -48,7 +64,7 @@ export const BlogComments = () => {
                   </div>
                 </div>
               </li>
-            </ul>
+            </ul> */}
           </li>
         </ul>
       </div>

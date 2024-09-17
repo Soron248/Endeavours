@@ -21,6 +21,11 @@ export const ContactAreaOne = () => {
       if(res.status === 200){
         alert("Posted successfully")
         console.log(res.data)
+        setMail("")
+        setMsg("")
+        setName("")
+        setPhone("")
+        setSubject("")
       }
     } catch (error) {
       console.log(error.msg)

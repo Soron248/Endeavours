@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Layout } from "../../layouts/Layout";
 import { BlogPageWrapper } from "../../components/BlogAreas/BlogPageWrapper";
-import { Link } from "react-router-dom";
+import { Link,useParams  } from "react-router-dom";
 import {
   BLOG_AVATAR01,
   BLOG_DETAILS01,
@@ -14,52 +14,100 @@ import { BlogComments } from "../../components/BlogAreas/BlogComments";
 import { BlogCommentForm } from "../../components/BlogAreas/BlogCommentForm";
 
 const BlogDetailsPage = () => {
+  const { id } = useParams();
+  const [blog, setBlog] = useState(null); // State to store the blog details
+  const [loading, setLoading] = useState(true); // State to handle loading
+  const [error, setError] = useState(null); // State to handle errors
+
+    // Fetch blog details when the component mounts or when the id changes
+  const fetchBlogDetails = async (id) => {
+    try {
+      const response = await fetch(`https://endeavours.pythonanywhere.com/api/blogs/${id}/`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      setBlog(data); // Set the blog data to state
+      setLoading(false); // Set loading to false
+    } catch (err) {
+      setError(err.message); // Set the error if there is an issue
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {    
+    fetchBlogDetails(id);
+  }, [id]); // Re-run the effect if the blog ID changes
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  blog && console.log(blog)
+
+  let dateString = blog.created_at;
+
+// Convert to a JavaScript Date object
+let date = new Date(dateString);
+
+// Define an array of month names
+const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'Jun.', 'Jul.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+
+// Get the day and month from the date object
+const day = date.getDate();
+const month = months[date.getMonth()];
+const year = date.getFullYear(); 
+
   return (
     <Layout breadcrumb={"Blog Details"} title={"Blog Details"}>
       <BlogPageWrapper>
         {/* image */}
         <div className="blog-details-thumb">
-          <img src={BLOG_DETAILS01} alt="" />
+          <img src={blog.featured_images[0].blog_image} alt="" />
         </div>
 
         {/* content */}
         <div className="blog-details-content">
-          <h2 className="title">Why Should Business Payroll Outsourcing</h2>
+          <h2 className="title">{blog.title}</h2>
 
           <div className="blog-meta-three">
             <ul className="list-wrap">
               <li>
-                <i className="far fa-calendar"></i>22 Jan, 2023
+                <i className="far fa-calendar"></i>{day} {month} {year}
               </li>
               <li>
                 <img src={BLOG_AVATAR01} alt="" />
-                by <Link to="/blog-details">Kat Doven</Link>
+                by <Link to={`/blog-details/${blog.id}`}>{blog.created_by}</Link>
               </li>
-              <li>
+              {blog.categories.map((t,i)=>{
+                return (
+                  <li key={i}>
                 <i className="fas fa-tags"></i>
-                <Link to="/blog">Finance,</Link>
-                <Link to="/blog">Business</Link>
+                <Link to="/blog">{t.name} </Link>
               </li>
+                )
+              })}
               <li>
                 <i className="flaticon-speech-bubble"></i>
-                <Link to="/blog-details">05 Comments</Link>
+                <Link to="/blog-details">{blog.comments.length} Comments</Link>
               </li>
             </ul>
           </div>
 
           <p>
-            when an unknown printer took ar galley offer type year anddey
-            scrambled make type aewer specimen book bethas survived not only
-            five when annery unknown printer.eed a little help from our friends
-            from time to time. Although we offer the one-stop convenience.
+            {blog.content}
           </p>
-          <p>
+          {/* <p>
             eed a little help from our friends from time to time. Although we
             offer the one-stop convenience of annery integrated range of legal,
             financial services under one roof, there are occasions when our
             clients areaneed specia- list advice beyond the scope of our own
             expertise.
-          </p>
+          </p> */}
           {/* <blockquote>
             <p>
               “ urabitur varius eros rutrum consequat Mauris aewa sollicitudin
@@ -127,18 +175,19 @@ const BlogDetailsPage = () => {
                 <div className="post-tags">
                   <h5 className="title">Tags:</h5>
                   <ul className="list-wrap">
-                    <li>
-                      <a href="#">Finance</a>
+                  {blog.tags.map((t,i)=>{
+                return (
+                  <li key={i}>
+                      <a href="#">{t.name}</a>
                     </li>
-                    <li>
-                      <a href="#">Marketing</a>
-                    </li>
+                )
+              })}
                   </ul>
                 </div>
               </div>
 
               {/* bottom */}
-              <div className="col-md-5">
+              {/* <div className="col-md-5">
                 <div className="blog-post-share">
                   <h5 className="title">Share:</h5>
                   <ul className="list-wrap">
@@ -164,19 +213,19 @@ const BlogDetailsPage = () => {
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
 
         {/* auhor info */}
-        <BlogAuthorInfo />
+        {/* <BlogAuthorInfo /> */}
 
         {/* comments */}
-        <BlogComments />
+        <BlogComments comments={blog.comments}  />
 
         {/* comment form */}
-        <BlogCommentForm />
+        <BlogCommentForm blog={blog} />
       </BlogPageWrapper>
     </Layout>
   );

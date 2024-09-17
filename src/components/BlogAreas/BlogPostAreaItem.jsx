@@ -19,7 +19,7 @@ const formattedDate = `${day}, ${month}`;
   return (
     <div className="blog-post-item">
       <div className="blog-post-thumb">
-        <Link to={"/blog-details"}>
+        <Link to={`/blog-details/${blog.id}`}>
           <img src={blog.featured_images[0].blog_image} alt="" />
         </Link>
 
@@ -29,17 +29,17 @@ const formattedDate = `${day}, ${month}`;
       </div>
 
       <div className="blog-post-content">
-        <Link to={blog.tagHref} className="tag">
-          {blog.tags[0].name}
+        <Link to={`/blog-details/${blog.id}`} className="tag">
+          {blog.categories[0].name}
         </Link>
 
         <h2 className="title">
-          <Link to={"/blog-details"}>{blog.title}</Link>
+          <Link to={`/blog-details/${blog.id}`}>{blog.title}</Link>
         </h2>
 
         <p>{blog.content}</p>
 
-        <Link to={"/blog-details"} className="link-btn">
+        <Link to={`/blog-details/${blog.id}`} className="link-btn">
           Read More <i className="flaticon-right-arrow"></i>
         </Link>
       </div>

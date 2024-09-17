@@ -24,8 +24,8 @@ export const TeamAreaOne = () => {
         </div>
 
         <div className="row justify-content-center">
-          {TEAM_LIST_ONE.map((member) => (
-            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-9">
+          {TEAM_LIST_ONE.map((member,index) => (
+            <div className="col-xl-3 col-lg-4 col-md-6 col-sm-9" key={index}>
               <TeamAreaOneItem member={member} />
             </div>
           ))}

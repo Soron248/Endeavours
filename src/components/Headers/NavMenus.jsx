@@ -118,7 +118,7 @@ export const NavMenus = () => {
         {/* about */}
         <li
           className={cn("menu-item-has-children", {
-            active: aboutLinkList.map((el) => el.to).includes(pathname),
+            active: ["/about"].includes(pathname),
           })}
         >
           {/* <a href="#">About Us</a>
@@ -194,7 +194,7 @@ export const NavMenus = () => {
         {/* services */}
         <li
           className={cn("menu-item-has-children", {
-            active: aboutLinkList.map((el) => el.to).includes(pathname),
+            active: ["/services-details"].includes(pathname),
           })}
         >
           {/* <a href="#">About Us</a>
@@ -211,18 +211,13 @@ export const NavMenus = () => {
         {/* blog */}
         <li
           className={cn("menu-item-has-children", {
-            active: ["/blog", "/blog-details"].includes(pathname),
+            active: ["/blog"].includes(pathname),
           })}
         >
-          <a href="#">Blog</a>
-          <ul className="sub-menu">
-            <li className={cn(isActiveCn("/blog"))}>
-              <Link to="/blog">Our Blog</Link>
-            </li>
-            <li className={cn(isActiveCn("/blog-details"))}>
+              <Link to="/blog">Blog</Link>
+            {/* <li className={cn(isActiveCn("/blog-details"))}>
               <Link to="/blog-details">Blog Details</Link>
-            </li>
-          </ul>
+            </li> */}
         </li>
 
         {/* contact */}
