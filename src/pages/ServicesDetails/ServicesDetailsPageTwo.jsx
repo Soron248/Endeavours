@@ -120,7 +120,7 @@ const ServicesDetailsPageTwo = () => {
       </ServicesDetailsWrapper>
 
       {/* brand-area */}
-      <BrandSeven />
+      {/* <BrandSeven /> */}
     </Layout>
   );
 };
