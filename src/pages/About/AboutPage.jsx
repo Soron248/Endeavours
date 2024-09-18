@@ -23,7 +23,7 @@ const AboutPage = () => {
       {/* <TestimonialAreaOne /> */}
 
       {/* brand-area */}
-      <BrandSix />
+      {/* <BrandSix /> */}
     </Layout>
   );
 };

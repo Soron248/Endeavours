@@ -104,11 +104,11 @@ export const BlogCommentForm = ({ blog }) => {
           </div>
         </div>
 
-        <button type="submit" className="submit-btn">
+        <button type="submit" className="submit-btn" style={{marginBottom:"40px"}}>
           Submit Post
         </button>
         {/* Status message */}
-        {statusMessage && <p>{statusMessage}</p>}
+        {statusMessage && <p style={{color:"green",fontWeight:"bold"}}>{statusMessage}</p>}
       </form>
     </div>
   );

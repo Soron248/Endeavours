@@ -42,7 +42,7 @@ export const AboutSeven = () => {
                 data-aos="fade-left"
                 data-aos-delay="0"
               >
-                <h2 className="title">Fueling</h2>
+                <h2 className="" style={{color:"white"}}>Fueling</h2>
                 <p>Growth and Creativity</p>
               </div>
             </div>

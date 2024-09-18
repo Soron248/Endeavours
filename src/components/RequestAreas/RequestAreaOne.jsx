@@ -23,7 +23,7 @@ export const RequestAreaOne = () => {
                 </div>
                 <div className="content">
                   <span>Hotline 24/7</span>
-                  <a href="tel:0123456789">+123 8989 444</a>
+                  <a href="tel:8801716455355">+880 1716 455 355</a>
                 </div>
               </div>
 
@@ -33,7 +33,7 @@ export const RequestAreaOne = () => {
                 </div>
                 <div className="content">
                   <span>Mail us</span>
-                  <a href="mailto:endeavourscorporationltd@gmail.com">endeavourscorporationltd@gmail.com</a>
+                  <a href="mailto:info@endeavoursbd.com">info@endeavoursbd.com</a>
                 </div>
               </div>
             </div>

@@ -8067,7 +8067,11 @@ label {
 .comments-avatar img {
   border-radius: 50%;
 }
+.comments-text{
+  width: 100%;
+}
 .comments-text .avatar-name {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8085,6 +8089,8 @@ label {
   color: var(--tg-primary-color);
 }
 .comments-text p {
+  max-width: 100%;
+  height: auto;
   margin-bottom: 15px;
 }
 .comments-text .reply-btn {

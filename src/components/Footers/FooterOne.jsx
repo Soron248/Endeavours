@@ -19,7 +19,7 @@ export const FooterOne = () => {
                           <i className="flaticon-pin"></i>
                         </div>
                         <div className="content">
-                          <p>Khilkhet, Dhaka</p>
+                          <p>Nikunja 2,Khilkhet, Dhaka</p>
                         </div>
                       </li>
                       <li>
@@ -27,7 +27,7 @@ export const FooterOne = () => {
                           <i className="flaticon-phone-call"></i>
                         </div>
                         <div className="content">
-                          <a href="tel:0123456789">+012 3456 789</a>
+                          <a href="tel:8801716455355">+880 1716 455 355</a>
                         </div>
                       </li>
                       <li>

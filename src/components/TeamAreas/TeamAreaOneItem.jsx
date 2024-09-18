@@ -14,7 +14,7 @@ export const TeamAreaOneItem = ({ member }) => {
                 <i className="fab fa-facebook-f"></i>
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#">
                 <i className="fab fa-twitter"></i>
               </a>
@@ -23,10 +23,10 @@ export const TeamAreaOneItem = ({ member }) => {
               <a href="#">
                 <i className="fab fa-instagram"></i>
               </a>
-            </li>
+            </li> */}
             <li>
               <a href="#">
-                <i className="fab fa-pinterest-p"></i>
+                <i className="fab fa-linkedin"></i>
               </a>
             </li>
           </ul>
