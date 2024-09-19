@@ -1449,6 +1449,23 @@
     min-height: 550px;
     padding: 180px 0 80px;
   }
+  .slider-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Take the same background image */
+    filter: blur(10px); /* Blur effect */
+    z-index: 0; /* Ensure it stays behind the text */
+  }
+
+  .slider-content {
+    position: relative;
+    z-index: 1; /* Ensure the text appears on top */
+  }
+
   .about-img-wrap img.main-img {
     width: 260px;
     height: 260px;
@@ -2162,7 +2179,7 @@
   }
   .services-details-thumb img {
     min-height: 250px;
-    object-fit: cover;
+    object-fit: fill;
   }
   .services-details-content .title {
     font-size: 26px;
