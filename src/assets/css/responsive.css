@@ -1465,6 +1465,21 @@
     position: relative;
     z-index: 1; /* Ensure the text appears on top */
   }
+  .slider-bg.one {
+    background: url("../images/bg4.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .slider-bg.two {
+    background: url("../images/bg4.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .slider-bg.three {
+    background: url("../images/bg4.jpg");
+    background-size: cover;
+    background-position: center;
+  }
 
   .about-img-wrap img.main-img {
     width: 260px;
