@@ -40,7 +40,7 @@ export const ContactAreaOne = () => {
       name: name,
       email: mail,
       phone_number: phone,
-      message: [
+      messages: [
         {
           subject: subject,
           message: msg
