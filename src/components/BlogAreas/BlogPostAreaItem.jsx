@@ -37,7 +37,7 @@ const formattedDate = `${day}, ${month}`;
           <Link to={`/blog-details/${blog.id}`}>{blog.title}</Link>
         </h2>
 
-        <p>{blog.content}</p>
+        <p className="truncate-text">{blog.content}</p>
 
         <Link to={`/blog-details/${blog.id}`} className="link-btn">
           Read More <i className="flaticon-right-arrow"></i>
