@@ -7367,6 +7367,7 @@ label {
 }
 .blog-post-thumb img {
   width: 100%;
+  height: 225px;
   transform: scale(1);
 }
 .blog-post-item:hover .blog-post-thumb img {
