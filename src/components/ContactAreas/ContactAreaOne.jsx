@@ -19,8 +19,6 @@ export const ContactAreaOne = () => {
         body: JSON.stringify(data)
       })
       if(res.status === 201){
-        alert("Posted successfully")
-        console.log(res.data)
         setMail("")
         setMsg("")
         setName("")
@@ -30,6 +28,7 @@ export const ContactAreaOne = () => {
       }
     } catch (error) {
       console.log(error.msg)
+      alert("Sorry try again latter..")
     }
   }
 
