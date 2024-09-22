@@ -7346,6 +7346,14 @@ label {
   top: 0;
   z-index: -1;
 }
+.truncate-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
 .blog-post-item {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   background: var(--tg-white);
