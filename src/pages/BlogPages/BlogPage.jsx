@@ -90,10 +90,13 @@ const BlogPage = () => {
           <div className="pagination-wrap mt-30">
             <nav aria-label="Page navigation example">
               <ul className="pagination list-wrap">
-                <li className="page-item" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-                  <a className="page-link" href="#" aria-disabled={currentPage === 1}>
-                    <i className="fas fa-angle-double-left"></i>
-                  </a>
+                <li className="page-item" >
+                  <button style={{backgroundColor:"transparent",border:"none",outline:"none"}} onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1 && true}>
+                  <a className="page-link" href="#" aria-disabled={currentPage === 1 && true}>
+                      <i className="fas fa-angle-double-left"></i>
+                    </a>
+                  </button>
+                  
                 </li>
                 {[...Array(totalPages)].map((_, index) => (
                   <li key={index} className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}>
@@ -102,10 +105,14 @@ const BlogPage = () => {
                     </a>
                   </li>
                 ))}
-                <li className="page-item" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+                <li className="page-item" >
+                  
+                  <button style={{backgroundColor:"transparent",border:"none",outline:"none"}} onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1 && true}>
                   <a className="page-link" href="#" aria-disabled={currentPage === totalPages}>
                     <i className="fas fa-angle-double-right"></i>
                   </a>
+                  </button>
+                  
                 </li>
               </ul>
             </nav>
