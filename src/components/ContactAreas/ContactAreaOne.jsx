@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { CONTACT_SHAPE } from "../../lib/assets";
+import { ToastContainer, toast, Slide } from 'react-toastify'; // Slide transition imported here
+import 'react-toastify/dist/ReactToastify.css';
 
 export const ContactAreaOne = () => {
   const [name, setName] = useState("")
@@ -8,33 +10,42 @@ export const ContactAreaOne = () => {
   const [subject, setSubject] = useState("")
   const [msg, setMsg] = useState("")
 
-  const postCotacts = async (data)=>{
-
+  const postCotacts = async (data) => {
     try {
-      const res = await fetch("https://endeavours.pythonanywhere.com/api/customers/",{
+      const res = await fetch("https://endeavours.pythonanywhere.com/api/customers/", {
         method: "POST",
-        headers:{
+        headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data)
       })
-      if(res.status === 201){
+      if (res.status === 201) {
         setMail("")
         setMsg("")
         setName("")
         setPhone("")
         setSubject("")
-        alert("contact submitted successfully")
+        toast.success('🦄 Submitted successfully!', {
+          position: "bottom-left",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          transition: Slide, // Fix here: Using the Slide transition correctly
+        });
       }
     } catch (error) {
-      console.log(error.msg)
-      alert("Sorry try again latter..")
+      console.log(error)
+      alert("Sorry, try again later..")
     }
   }
 
-  const handleSubmit =(e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(name,mail,phone,subject,msg)
+    console.log(name, mail, phone, subject, msg)
 
     const bodyData = {
       name: name,
@@ -45,7 +56,7 @@ export const ContactAreaOne = () => {
           subject: subject,
           message: msg
         }
-    ]
+      ]
     }
 
     postCotacts(bodyData)
@@ -75,37 +86,50 @@ export const ContactAreaOne = () => {
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-grp">
-                      <input type="text" placeholder="Name *" value={name} onChange={(e)=>setName(e.target.value)} />
+                      <input type="text" placeholder="Name *" value={name} onChange={(e) => setName(e.target.value)} />
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="form-grp">
-                      <input type="email" placeholder="E-mail *" value={mail} onChange={(e)=>setMail(e.target.value)} />
+                      <input type="email" placeholder="E-mail *" value={mail} onChange={(e) => setMail(e.target.value)} />
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="form-grp">
-                      <input type="number" placeholder="Phone *" value={phone} onChange={(e)=>setPhone(e.target.value)} />
+                      <input type="number" placeholder="Phone *" value={phone} onChange={(e) => setPhone(e.target.value)} />
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="form-grp">
-                      <input type="text" placeholder="Subject *" value={subject} onChange={(e)=>setSubject(e.target.value)} />
+                      <input type="text" placeholder="Subject *" value={subject} onChange={(e) => setSubject(e.target.value)} />
                     </div>
                   </div>
                   <div className="col-md-12">
                     <div className="form-grp">
-                      <textarea placeholder="Comments *" value={msg} onChange={(e)=>setMsg(e.target.value)} ></textarea>
+                      <textarea placeholder="Comments *" value={msg} onChange={(e) => setMsg(e.target.value)} ></textarea>
                     </div>
                   </div>
                 </div>
                 <button type="submit">Submit Now</button>
+                
               </form>
             </div>
           </div>
         </div>
       </div>
-
+      <ToastContainer
+                  position="bottom-left"
+                  autoClose={5000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="light"
+                  transition={Slide} // Corrected here as well
+                />
       {/* <div className="contact-shape">
         <img src={CONTACT_SHAPE} alt="" />
       </div> */}
