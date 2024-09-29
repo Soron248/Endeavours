@@ -1465,7 +1465,13 @@
     position: relative;
     z-index: 1; /* Ensure the text appears on top */
   }
-  .slider-bg.one {
+  .slider-content .title{
+    color: rgb(107, 106, 106);
+  }
+  .slider-content p{
+    color: navy;
+  }
+  /* .slider-bg.one {
     background: url("../images/bg4.jpg");
     background-size: cover;
     background-position: center;
@@ -1479,7 +1485,7 @@
     background: url("../images/bg4.jpg");
     background-size: cover;
     background-position: center;
-  }
+  } */
 
   .about-img-wrap img.main-img {
     width: 260px;
