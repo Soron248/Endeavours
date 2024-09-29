@@ -1339,6 +1339,9 @@ label {
 /*=============================
 	06. Slider
 ===============================*/
+.Toastify__toast-container {
+  z-index: 9999;
+}
 .slider-bg.one {
   background: url("../images/bg1.jpg");
   background-size: cover;
@@ -7330,7 +7333,7 @@ label {
 ===============================*/
 .blog-post-area {
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   padding: 120px 0 90px;
 }
 .blog-post-area .blog-bg {
