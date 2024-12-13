@@ -1,94 +1,129 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Layout } from "../../layouts/Layout";
 import { ServicesDetailsFaq } from "../../components/ServicesDetails/ServicesDetailsFaq";
 import { CHECK_ICON, SD_VIDEO_IMG, SERVICES_DETAILS01 } from "../../lib/assets";
 import { ServicesDetailsWrapper } from "../../components/ServicesDetails/ServicesDetailsWrapper";
 import { VideoPlayerOne } from "../../components/VideoPlayers/VideoPlayerOne";
 import { BrandSeven } from "../../components/Brand/BrandSeven";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-const ServicesDetailsPage = ({data}) => {
+const ServicesDetailsPage = () => {
+  const { id } = useParams();
+  console.log(id)
+  const [serviceDetails, setServiceDetails] = useState(null); // To store the fetched service details
+  const [loading, setLoading] = useState(true); // For loading state
+  const [error, setError] = useState(null); // For error handling
+
+  useEffect(() => {
+    if (id) {
+      // Start loading state
+      setLoading(true);
+      setError(null);
+
+      // Fetch data from the API using the id
+      axios
+        .get(`https://endeavours.pythonanywhere.com/api/services/${id}`)
+        .then((response) => {
+          // Store the service details in the state
+          setServiceDetails(response.data);
+        })
+        .catch((error) => {
+          // Handle any errors
+          setError("Error fetching service details.");
+        })
+        .finally(() => {
+          // Stop loading state
+          setLoading(false);
+        });
+    }
+  }, [id]); // Trigger the effect when 'id' changes
+
+  // Show loading state while the API is being fetched
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // Show error message if there is an error
+  if (error) {
+    return <div>{error}</div>;
+  }
+
   return (
     <Layout breadcrumb={"Services"} title={"Service Details"}>
       {/* services-details-area */}
       <ServicesDetailsWrapper hideContact hideTitle>
         <div className="services-details-wrap">
           <div className="services-details-thumb">
-            <img src={data.imgsrc} alt="" />
+            <img src={serviceDetails.service_detail_page_image} alt={serviceDetails.name} />
           </div>
 
-          <div className="services-details-content">
-            <h2 className="title">
-              {data.headingOne}
-            </h2>
-            <p>
-              {data.subOne}
-            </p>
-            <p>
-              {data.subTwo}
-            </p>
-
-            <div className="sd-inner-wrap">
-              <div className="row align-items-center">
-                <div className="col-56">
-                  <div className="content">
-                    <h3 className="title-two">
-                      {data.headingTwo}
-                    </h3>
-                    <p>
-                      {data.subThree}
-                    </p>
-
+          {serviceDetails && serviceDetails.description_sections.map((detail,index)=>{
+            return(
+              <div className="services-details-content" key={detail.id}>
+              <h2 className="title">
+                {detail.name}
+              </h2>
+              <p>
+                {detail.description}
+              </p>
+  
+              <div className="sd-inner-wrap">
+                <div className="row align-items-center">
+                  <div className="col-56">
+                    <div className="content">
+                      {/* <h3 className="title-two">
+                        {detail.headingTwo}
+                      </h3>
+                      <p>
+                        {detail.subThree}
+                      </p> */}
+  
                         <ul className="list-wrap" >
-                      <li>
-                        <img src={CHECK_ICON} alt="" />
-                        {data.point[0]}
-                      </li>
-                      <li>
-                        <img src={CHECK_ICON} alt="" />
-                        {data.point[1]}
-                      </li>
-                      <li>
-                        <img src={CHECK_ICON} alt="" />
-                        {data.point[2]}
-                      </li>
-                      <li>
-                        <img src={CHECK_ICON} alt="" />
-                        {data.point[3]}
-                      </li>
-                    </ul>
-
+                          {detail && detail.bullet_points.map((p,i)=>{
+                            return(
+                              <li key={i}>
+                              <img src={CHECK_ICON} alt="" />
+                              {p.name}
+                            </li>
+                            )
+                          })}
+                      </ul>
+                    </div>
                   </div>
+  
+                  {/* <div className="col-44">
+                    <div className="thumb">
+                      <img src={SD_VIDEO_IMG} alt="" />
+  
+                      <VideoPlayerOne
+                        src={"https://www.youtube.com/watch?v=6mkoGSqTqFI"}
+                      />
+                    </div>
+                  </div> */}
                 </div>
-
-                {/* <div className="col-44">
-                  <div className="thumb">
-                    <img src={SD_VIDEO_IMG} alt="" />
-
-                    <VideoPlayerOne
-                      src={"https://www.youtube.com/watch?v=6mkoGSqTqFI"}
-                    />
-                  </div>
-                </div> */}
+              </div>
+  
+              <p>
+                {detail.short_description}
+              </p>
+              <div className="company-benefit-wrap">
+                {/* {detail.accordions && <h2 className="title-two">Services benifit:</h2>} */}
+                {/* <p>
+                  when an unknown printer took a galley of type and scrambled it
+                  to make a type specimen bookhas a not only five centuries, but
+                  also the leap into electronic typesetting, remaining essentially
+                  unchan galley of type and scrambled it to make a type specimen
+                  book.
+                </p> */}
+  
+                {/* faq accordion */}
+                <ServicesDetailsFaq accordion={detail.accordions}/>
               </div>
             </div>
+            )
+          })}
 
-            <p>
-              {data.subFour}
-            </p>
-            <div className="company-benefit-wrap">
-              <h2 className="title-two">{data.faqHead}</h2>
-              {/* <p>
-                when an unknown printer took a galley of type and scrambled it
-                to make a type specimen bookhas a not only five centuries, but
-                also the leap into electronic typesetting, remaining essentially
-                unchan galley of type and scrambled it to make a type specimen
-                book.
-              </p> */}
-
-              {/* faq accordion */}
-              <ServicesDetailsFaq faqn={data.faqName} faqp={data.faqPoint} />
-            </div>
-          </div>
         </div>
       </ServicesDetailsWrapper>
 

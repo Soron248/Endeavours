@@ -76,7 +76,7 @@ function App() {
         <Route path="services-3" element={<ServicesDetailsPage data={SERVICES_DETAILS_LIST[2]} />} />
         <Route path="services-4" element={<ServicesDetailsPage data={SERVICES_DETAILS_LIST[3]} />} />
         <Route path="services-5" element={<ServicesPageFive />} />
-        <Route path="services-details" element={<ServicesDetailsPage data={SERVICES_DETAILS_LIST[0]} />} />
+        <Route path="services-details/:id" element={<ServicesDetailsPage  />} />
         {/* <Route path="services-details-2" element={<ServicesDetailsPageTwo />} /> */}
         {/* <Route
           path="services-details-3"

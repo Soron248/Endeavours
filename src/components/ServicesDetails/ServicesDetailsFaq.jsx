@@ -1,84 +1,42 @@
 import React from "react";
 
-export const ServicesDetailsFaq = ({faqn,faqp}) => {
+export const ServicesDetailsFaq = ({ accordion }) => {
   return (
     <div className="accordion-wrap-three">
       <div className="accordion" id="accordionExample">
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseOne"
-              aria-expanded="true"
-              aria-controls="collapseOne"
-            >
-              {faqn[0]}
-            </button>
-          </h2>
-          <div
-            id="collapseOne"
-            className="accordion-collapse collapse show"
-            data-bs-parent="#accordionExample"
-          >
-            <div className="accordion-body">
-              <p>
-               {faqp[0]}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo"
-              aria-expanded="false"
-              aria-controls="collapseTwo"
-            >
-              {faqn[1]}
-            </button>
-          </h2>
-          <div
-            id="collapseTwo"
-            className="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-          >
-            <div className="accordion-body">
-              <p>
-              {faqp[1]}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
-              {faqn[2]}
-            </button>
-          </h2>
-          <div
-            id="collapseThree"
-            className="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-          >
-            <div className="accordion-body">
-              <p>
-              {faqp[2]}
-              </p>
-            </div>
-          </div>
-        </div>
+        {accordion &&
+          accordion.map((a, i) => {
+            // Ensure `a.id` is a valid selector by prefixing it with 'collapse'
+            const collapseId = `collapse${a.id}`;
+            // Set the first item to be open by default
+            const isFirstItem = i === 0;
+            
+            return (
+              <div className="accordion-item" key={a.id}>
+                <h2 className="accordion-header">
+                  <button
+                    className="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target={`#${collapseId}`} // Updated to use the prefixed id
+                    aria-expanded={isFirstItem ? "true" : "false"} // Open the first item
+                    aria-controls={collapseId} // Updated here as well
+                  >
+                    {a.name}
+                  </button>
+                </h2>
+                <div
+                  id={collapseId} // Ensure the ID is correctly assigned
+                  className={`accordion-collapse collapse ${isFirstItem ? "show" : ""}`} // Open the first item
+                  data-bs-parent="#accordionExample"
+                >
+                  <div className="accordion-body">
+                    <p>{a.description}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
       </div>
     </div>
   );

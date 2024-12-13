@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const ServiceOneItem = ({ service }) => {
+  console.log("Rendering ServiceOneItem:", service.id); // Debug
   return (
     <div className="services-item">
       <div className="services-content">
@@ -9,24 +10,19 @@ export const ServiceOneItem = ({ service }) => {
           <div className="icon">
             <i className={service.icon}></i>
           </div>
-
-          <h2 className="title">{service.title} </h2>
+          <h2 className="title">{service.name}</h2>
         </div>
-
         <div className="services-thumb">
-          <img src={service.src} alt="" />
-
-          <Link to={service.href} className="btn transparent-btn">
+          <img src={service.service_image} alt={service.name} />
+          <Link to={`/services-details/${service.id}`} className="btn transparent-btn">
             Our Services
           </Link>
         </div>
-
         <ul className="list-wrap">
-          {service.point && service.point.map((p,i)=>{
-            return(
-              <li key={i}>{p}</li>
-            )
-          })}
+          {service.initial_bullet_points &&
+            service.initial_bullet_points.map((point) => (
+              <li key={point.id}>{point.name}</li>
+            ))}
         </ul>
       </div>
     </div>

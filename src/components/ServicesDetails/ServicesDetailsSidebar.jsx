@@ -1,18 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link,useLocation  } from "react-router-dom";
 import cn from "classnames";
 import { SERVICES_DETAILS01 } from "../../lib/assets";
+import axios from "axios";
 
 export const ServicesDetailsSidebar = ({
   hideContact = false,
   hideTitle = false,
 }) => {
-  const services = [
-    { label: "Digital Marketing", href: "/services-details" },
-    { label: "Web Development", href: "/services-2" },
-    { label: "Business Consultancy", href: "/services-3" },
-    { label: "Import consultancy", href: "/services-4" },
-  ];
+  const [servicesData, setServicesData] = useState([]); // Initialize state to store data
+  const [services, setServices] = useState([]);
+  const [error, setError] = useState(null); // Optional: to handle errors
+  // const services = [
+  //   { label: "Digital Marketing", href: "/services-details" },
+  //   { label: "Web Development", href: "/services-2" },
+  //   { label: "Business Consultancy", href: "/services-3" },
+  //   { label: "Import consultancy", href: "/services-4" },
+  // ];
+
+  const fetchServices = async () => {
+    try {
+      const response = await axios.get('https://endeavours.pythonanywhere.com/api/services/');
+      const uniqueServices = Array.from(new Set(response.data.map(s => s.id))).map(id =>
+        response.data.find(s => s.id === id)
+      );
+      setServicesData(uniqueServices); // Filter for unique services
+          // Map the fetched data to create a new array for services with label and href
+    const mappedServices = servicesData.map((service) => ({
+      label: service.name, // Set label to service name
+      href: `/services-details/${service.id}`, // Create dynamic href based on service id
+    }));
+    setServices(mappedServices);
+    } catch (err) {
+      console.error('Error fetching services:', err);
+      setError(err.message); // Update error state
+    }
+  };
+
+  useEffect(() => {
+    fetchServices();
+  }, [servicesData,services]);
+  
   const location = useLocation(); // get the current location
   return (
     <aside className="services-sidebar">
@@ -20,7 +48,7 @@ export const ServicesDetailsSidebar = ({
       {hideTitle ? (
         <div className="services-cat-list mb-30">
           <ul className="list-wrap">
-            {services.map((item, idx) => (
+            {services && services.map((item, idx) => (
               <li key={item.label} className={cn({ active: location.pathname === item.href })}>
                 <Link to={item.href}>
                   {item.label} <i className="flaticon-right-arrow"></i>
