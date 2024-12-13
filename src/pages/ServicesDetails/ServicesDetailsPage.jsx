@@ -7,6 +7,7 @@ import { VideoPlayerOne } from "../../components/VideoPlayers/VideoPlayerOne";
 import { BrandSeven } from "../../components/Brand/BrandSeven";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Helmet } from "react-helmet"; // Import Helmet
 
 const ServicesDetailsPage = () => {
   const { id } = useParams();
@@ -49,8 +50,23 @@ const ServicesDetailsPage = () => {
     return <div>{error}</div>;
   }
 
+  // Extract meta keywords from the service details
+  const metaKeywords = serviceDetails?.meta_keywords?.map((keyword) => keyword.name).join(", ") || "";
+  
   return (
     <Layout breadcrumb={"Services"} title={"Service Details"}>
+      {/* Adding dynamic metadata using Helmet for service details */}
+      {serviceDetails && (
+        <Helmet>
+          <title>{serviceDetails.meta_title} - Service Details</title>
+          <meta name="description" content={serviceDetails.meta_description} />
+          <meta
+            property="og:title"
+            content={`${serviceDetails.meta_title} - Service Details`}
+          />
+          <meta name="keywords" content={metaKeywords} />
+        </Helmet>
+      )}
       {/* services-details-area */}
       <ServicesDetailsWrapper hideContact hideTitle>
         <div className="services-details-wrap">
