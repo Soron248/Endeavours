@@ -28,6 +28,8 @@ const ServicesDetailsPage = () => {
         .then((response) => {
           // Store the service details in the state
           setServiceDetails(response.data);
+          console.log(id)
+
         })
         .catch((error) => {
           // Handle any errors
@@ -38,20 +40,23 @@ const ServicesDetailsPage = () => {
           setLoading(false);
         });
     }
+  console.log(id)
+
   }, [id]); // Trigger the effect when 'id' changes
 
   // Show loading state while the API is being fetched
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
-  // Show error message if there is an error
-  if (error) {
-    return <div>{error}</div>;
-  }
+  // // Show error message if there is an error
+  // if (error) {
+  //   return <div>{error}</div>;
+  // }
 
   // Extract meta keywords from the service details
   const metaKeywords = serviceDetails?.meta_keywords?.map((keyword) => keyword.name).join(", ") || "";
+  console.log(id)
   
   return (
     <Layout breadcrumb={"Services"} title={"Service Details"}>
@@ -68,7 +73,7 @@ const ServicesDetailsPage = () => {
         </Helmet>
       )}
       {/* services-details-area */}
-      <ServicesDetailsWrapper hideContact hideTitle>
+      {serviceDetails &&<ServicesDetailsWrapper hideContact hideTitle>
         <div className="services-details-wrap">
           <div className="services-details-thumb">
             <img src={serviceDetails.service_detail_page_image} alt={serviceDetails.name} />
@@ -77,7 +82,7 @@ const ServicesDetailsPage = () => {
           {serviceDetails && serviceDetails.description_sections.map((detail,index)=>{
             return(
               <div className="services-details-content" key={detail.id}>
-              <h2 className="title">
+              <h2 style={{marginTop:"50px"}} >
                 {detail.name}
               </h2>
               <p>
@@ -123,7 +128,7 @@ const ServicesDetailsPage = () => {
               <p>
                 {detail.short_description}
               </p>
-              <div className="company-benefit-wrap">
+              <div className="company-benefit-wrap" >
                 {/* {detail.accordions && <h2 className="title-two">Services benifit:</h2>} */}
                 {/* <p>
                   when an unknown printer took a galley of type and scrambled it
@@ -141,7 +146,7 @@ const ServicesDetailsPage = () => {
           })}
 
         </div>
-      </ServicesDetailsWrapper>
+      </ServicesDetailsWrapper>}
 
       {/* brand-area */}
       {/* <BrandSeven /> */}

@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import cn from "classnames";
+import axios from "axios";
 
 export const NavMenus = () => {
   const { pathname } = useLocation();
+    const [services, setServices] = useState([]); // Initialize state to store data
+    const [error, setError] = useState(null); // Optional: to handle errors
+
+    const fetchServices = async () => {
+      try {
+        const response = await axios.get('https://endeavours.pythonanywhere.com/api/services/');
+        const uniqueServices = Array.from(new Set(response.data.map(s => s.id))).map(id =>
+          response.data.find(s => s.id === id)
+        );
+        setServices(uniqueServices); // Filter for unique services
+      } catch (err) {
+        console.error('Error fetching services:', err);
+        setError(err.message); // Update error state
+      }
+    };
+  
+    useEffect(() => {
+      fetchServices();
+    }, []);
 
   const isActiveCn = (path) => {
     return path === pathname ? "active" : "";
@@ -204,7 +224,7 @@ export const NavMenus = () => {
               </li>
             ))}
           </ul> */}
-                <Link to="/services-details">Services</Link>
+                <Link to={services?.[0]?.id ? `/services-details/${services[0].id}` : "#"}>Services</Link>
 
         </li>
 
