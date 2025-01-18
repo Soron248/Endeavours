@@ -1343,33 +1343,34 @@ label {
   z-index: 9999;
 }
 .slider-bg.one {
-  background: url("../images/bg1.jpg");
-  background-size: cover;
+  background: url("../images/SLIDER-01.jpg");
   background-position: center;
+  background-size: cover;
 }
 .slider-bg.two {
-  background: url("../images/bg2.jpg");
-  background-size: cover;
+  background: url("../images/SLIDER-02.jpg");
   background-position: center;
+  background-size: cover;
 }
 .slider-bg.three {
-  background: url("../images/bg3.jpg");
+  background: url("../images/SLIDER-03.jpg");
   background-size: cover;
   background-position: center;
 }
 .slider-bg.four {
-  background: url("../images/bg4.jpg");
+  background: url("../images/SLIDER-04.jpg");
   background-size: cover;
   background-position: center;
 }
 .slider-bg {
   background-size: cover;
   background-position: center;
-  min-height: 872px;
+  min-height: 450px;
   display: flex !important;
   align-items: center;
   padding: 200px 0 120px;
   position: relative;
+  margin-top: 140px;
   z-index: 1;
   overflow: hidden;
   cursor: grab;

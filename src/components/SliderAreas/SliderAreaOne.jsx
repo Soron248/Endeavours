@@ -44,7 +44,7 @@ export const SliderAreaOne = () => {
   ];
 
   return (
-    <section className="slider-area">
+    <section className="slider-area responsive-height" style={{height:"100vh"}}>
       <div className="slider-active">
         <SlickSlider settings={slick_settings_brands}>
           {slidesData.map((item) => (
@@ -52,7 +52,7 @@ export const SliderAreaOne = () => {
               <div className="container">
                 <div className="row">
                   <div className="col-lg-6">
-                    <div className="slider-content">
+                    {/* <div className="slider-content">
                       <span
                         className="sub-title"
                         data-animation="fadeInUp"
@@ -78,21 +78,27 @@ export const SliderAreaOne = () => {
                       >
                         Our Services
                       </Link>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
-              <div className="slider-shape">
+              {/* <div className="slider-shape">
                 <img
                   src={BANNER_SHAPE}
                   alt=""
                   data-animation="zoomIn"
                   data-delay=".8s"
                 />
-              </div>
+              </div> */}
             </div>
           ))}
         </SlickSlider>
+        
+        <div style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column",marginTop:"30px"}}>
+          
+          <h1 style={{textAlign:"center"}}>Welcome to Endeavours Corporation Ltd.</h1>
+          {/* <p style={{textAlign:"center"}}>Your Trusted Partner in Business Growth.<br /> We provide website development, digital marketing, business consultancy, SEO, UI/UX design, import-export services,<br /> and more empowering your business to achieve success locally and globally.</p> */}
+        </div>
       </div>
     </section>
   );

@@ -1449,17 +1449,17 @@
     min-height: 550px;
     padding: 180px 0 80px;
   }
-  .slider-bg::before {
+  /* .slider-bg::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: inherit; /* Take the same background image */
-    filter: blur(10px); /* Blur effect */
-    z-index: 0; /* Ensure it stays behind the text */
-  }
+    background: inherit;
+    filter: blur(10px); 
+    z-index: 0; 
+  } */
 
   .slider-content {
     position: relative;

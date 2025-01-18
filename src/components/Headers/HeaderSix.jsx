@@ -21,7 +21,7 @@ export const HeaderSix = () => {
                 <div className="header-top-left">
                   <ul className="list-wrap">
                     <li>
-                      <i className="flaticon-location"></i>256 Avenue, Mark
+                      <i className="flaticon-location"></i> Avenue, Mark
                       Street, Newyork City
                     </li>
                     <li>
@@ -67,6 +67,63 @@ export const HeaderSix = () => {
             </div>
           </div>
         </div> */}
+        <div className="heder-top-wrap">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-7">
+              <div className="header-top-left">
+                <ul className="list-wrap">
+                  <li>
+                    <i className="flaticon-location"></i>Nikunja 2,Khilkhet, Dhaka
+                  </li>
+                  <li>
+                    <i className="flaticon-mail"></i>
+                    <a href="mailto:info@endeavoursbd.com">info@endeavoursbd.com</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="col-lg-5">
+              <div className="header-top-right">
+                <div className="header-contact">
+                  <a href="tel:0123456789">
+                    <i className="flaticon-phone-call"></i>+880 1716 455 355
+                  </a>
+                </div>
+                <div className="header-social">
+                  <ul className="list-wrap">
+                    <li>
+                      <a href="https://www.facebook.com/share/B8D99SA7vM7nwGNV/?mibextid=qi2Omg">
+                        <i className="fab fa-facebook-f"></i>
+                      </a>
+                    </li>
+                    {/* <li>
+                      <a href="#">
+                        <i className="fab fa-twitter"></i>
+                      </a>
+                    </li> */}
+                    <li>
+                      <a href="https://www.instagram.com/endeavoursbd?igsh=MTVtY21lOHBqc3F0bQ==">
+                        <i className="fab fa-instagram"></i>
+                      </a>
+                    </li>
+                    {/* <li>
+                      <a href="#">
+                        <i className="fab fa-pinterest-p"></i>
+                      </a>
+                    </li> */}
+                    <li>
+                      <a href="https://www.linkedin.com/company/endeavoursbd/">
+                      <i className="fab fa-linkedin"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
         <div id="sticky-header" className="menu-area">
           <div className="container">
