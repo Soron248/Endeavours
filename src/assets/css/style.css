@@ -3776,11 +3776,22 @@ label {
   background-position: center;
   padding: 120px 0;
 }
+/* .services-item {
+  background: var(--tg-white);
+  border-radius: 10px;
+  padding: 25px 35px 35px;
+  margin-bottom: 30px;
+} */
 .services-item {
   background: var(--tg-white);
   border-radius: 10px;
   padding: 25px 35px 35px;
   margin-bottom: 30px;
+  flex: 1 1 calc(33.333% - 30px); /* Adjust for 3 columns; tweak as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures content is evenly spaced */
+  height: 700px; /* Default height, adjust with JS if necessary */
 }
 .services-content .content-top {
   display: flex;
@@ -4288,35 +4299,40 @@ label {
 .company-benefit-wrap p {
   margin-bottom: 25px;
 }
-.accordion-wrap-three .accordion-item {
+..accordion-wrap-three .accordion-item {
   background-color: transparent;
   border: none;
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 10px;
 }
+
 .accordion-wrap-three .accordion-item:last-child {
   margin-bottom: 0;
 }
+
 .accordion-wrap-three .accordion-item:first-of-type .accordion-button {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
 }
+
 .accordion-wrap-three .accordion-button {
   position: relative;
   padding: 16px 50px 16px 25px;
   font-weight: 600;
   font-size: 20px;
   color: var(--tg-secondary-color);
-  text-align: left;
   background-color: var(--tg-gray-two);
+  text-align: left;
   font-family: var(--tg-heading-font-family);
   border: none;
 }
+
 .accordion-wrap-three .accordion-button:not(.collapsed) {
   color: var(--tg-white);
   background: var(--tg-primary-color);
 }
+
 .accordion-wrap-three .accordion-button::after {
   content: "\f102";
   width: auto;
@@ -4329,11 +4345,12 @@ label {
   top: 18px;
   color: var(--tg-primary-color);
 }
+
 .accordion-wrap-three .accordion-button:not(.collapsed)::after {
-  background-image: none;
   transform: rotate(-180deg);
   color: var(--tg-white);
 }
+
 .accordion-wrap-three .accordion-body {
   padding: 20px 40px 30px 30px;
   border: 1px solid #dfdfdf;
@@ -4341,13 +4358,16 @@ label {
   border-radius: 0 0 4px 4px;
   margin-top: -1px;
 }
+
 .accordion-wrap-three .accordion-body p {
   margin-bottom: 0;
 }
+
 .accordion-wrap-three .accordion-button:focus {
   border-color: #dfdfdf;
   box-shadow: none;
 }
+
 .sd-inner-wrap-two {
   margin-top: 35px;
   margin-bottom: 50px;

@@ -44,7 +44,7 @@ export const SliderAreaOne = () => {
   ];
 
   return (
-    <section className="slider-area responsive-height" style={{height:"100vh"}}>
+    <section className="slider-area responsive-height" >
       <div className="slider-active">
         <SlickSlider settings={slick_settings_brands}>
           {slidesData.map((item) => (
@@ -94,7 +94,7 @@ export const SliderAreaOne = () => {
           ))}
         </SlickSlider>
         
-        <div style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column",marginTop:"30px"}}>
+        <div style={{display:"flex", justifyContent:"center", alignItems:"center", flexDirection:"column",margin:"30px 0"}}>
           
           <h1 style={{textAlign:"center"}}>Welcome to Endeavours Corporation Ltd.</h1>
           {/* <p style={{textAlign:"center"}}>Your Trusted Partner in Business Growth.<br /> We provide website development, digital marketing, business consultancy, SEO, UI/UX design, import-export services,<br /> and more empowering your business to achieve success locally and globally.</p> */}

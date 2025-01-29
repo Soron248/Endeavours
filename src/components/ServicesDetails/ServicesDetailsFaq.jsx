@@ -1,5 +1,4 @@
 import React from "react";
-import { v4 as uuidv4 } from "uuid"; // Import uuid
 
 export const ServicesDetailsFaq = ({ accordion }) => {
   return (
@@ -7,15 +6,14 @@ export const ServicesDetailsFaq = ({ accordion }) => {
       <div className="accordion" id="accordionExample">
         {accordion &&
           accordion.map((a, i) => {
-            // Generate a unique ID using uuid
-            const collapseId = `collapse-${uuidv4()}`;
+            const collapseId = `collapse-${i}`;
             const isFirstItem = i === 0; // Open the first item by default
 
             return (
               <div className="accordion-item" key={a.id}>
                 <h2 className="accordion-header">
                   <button
-                    className="accordion-button"
+                    className={`accordion-button ${isFirstItem ? "" : "collapsed"}`}
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target={`#${collapseId}`}
