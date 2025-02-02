@@ -18,34 +18,57 @@ export const ServicesDetailsSidebar = ({
   //   { label: "Import consultancy", href: "/services-4" },
   // ];
 
+  // const fetchServices = async () => {
+  //   try {
+  //     const response = await axios.get('https://endeavours.pythonanywhere.com/api/services/');
+  //     const uniqueServices = Array.from(new Set(response.data.map(s => s.id))).map(id =>
+  //       response.data.find(s => s.id === id)
+  //     );
+  //     setServicesData(uniqueServices); // Filter for unique services
+  //         // Map the fetched data to create a new array for services with label and href
+  //   const mappedServices = servicesData.map((service) => ({
+  //     label: service.name, // Set label to service name
+  //     href: `/services-details/${service.id}`, // Create dynamic href based on service id
+  //   }));
+  //   setServices(mappedServices);
+  //   } catch (err) {
+  //     console.error('Error fetching services:', err);
+  //     setError(err.message); // Update error state
+  //   }
+  // };
+
   const fetchServices = async () => {
     try {
       const response = await axios.get('https://endeavours.pythonanywhere.com/api/services/');
+      
       const uniqueServices = Array.from(new Set(response.data.map(s => s.id))).map(id =>
         response.data.find(s => s.id === id)
       );
-      setServicesData(uniqueServices); // Filter for unique services
-          // Map the fetched data to create a new array for services with label and href
-    const mappedServices = servicesData.map((service) => ({
-      label: service.name, // Set label to service name
-      href: `/services-details/${service.id}`, // Create dynamic href based on service id
-    }));
-    setServices(mappedServices);
+  
+      setServicesData(uniqueServices); // Set unique services
+  
+      // Directly map from `uniqueServices`, not `servicesData`
+      setServices(uniqueServices.map(service => ({
+        label: service.name,
+        href: `/services-details/${service.id}`,
+      })));
+  
     } catch (err) {
       console.error('Error fetching services:', err);
-      setError(err.message); // Update error state
+      setError(err.message);
     }
   };
+  
 
   useEffect(() => {
-    fetchServices();
-  }, [servicesData,services]);
+      fetchServices();
+  }, []);
   
   const location = useLocation(); // get the current location
   return (
     <aside className="services-sidebar">
       {/* Our Services */}
-      {hideTitle ? (
+      {services ? (
         <div className="services-cat-list mb-30">
           <ul className="list-wrap">
             {services && services.map((item, idx) => (

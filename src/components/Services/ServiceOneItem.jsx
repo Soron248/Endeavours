@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const ServiceOneItem = ({ service }) => {
-  console.log("Rendering ServiceOneItem:", service.id); // Debug
+  // console.log("Rendering ServiceOneItem:", service.id);
   return (
     <div className="services-item">
       <div className="services-content">

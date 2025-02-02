@@ -7421,6 +7421,7 @@ label {
 .blog-post-content {
   padding: 25px 30px 30px;
   border-radius: 0 0 10px 10px;
+  height: 300px;
 }
 .blog-post-content .tag {
   font-size: 14px;

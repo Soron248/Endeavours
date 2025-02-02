@@ -51,7 +51,7 @@ export const ServiceOne = () => {
     fetchServices();
   }, []);
 
-  console.log("Rendered services:", services); // Debug to ensure unique items
+  // console.log("Rendered services:", services);
 
   return (
     <section className="services-area services-bg">
