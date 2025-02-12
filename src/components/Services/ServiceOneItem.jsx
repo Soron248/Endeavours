@@ -8,7 +8,8 @@ export const ServiceOneItem = ({ service }) => {
       <div className="services-content">
         <div className="content-top">
           <div className="icon">
-            <i className={service.icon}></i>
+            <i className="flaticon-business-presentation"></i>
+            {/* <img src={service.icon} alt="icon" /> */}
           </div>
           <h2 className="title">{service.name}</h2>
         </div>
