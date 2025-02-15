@@ -10,7 +10,7 @@ export const TeamAreaOneItem = ({ member }) => {
         <div className="team-social">
           <ul className="list-wrap">
             <li>
-              <a href="#">
+              <a href={member.fbLink} target="_blank">
                 <i className="fab fa-facebook-f"></i>
               </a>
             </li>
@@ -25,7 +25,7 @@ export const TeamAreaOneItem = ({ member }) => {
               </a>
             </li> */}
             <li>
-              <a href="#">
+              <a href={member.lnLink} target="_blank">
                 <i className="fab fa-linkedin"></i>
               </a>
             </li>

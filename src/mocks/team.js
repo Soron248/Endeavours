@@ -21,11 +21,11 @@ import {
   TEAM_IMG04,
 } from "../lib/assets";
 
-import sajal from "../assets/images/sajal.jpg"
-import taufiq from "../assets/images/toufiq.jpg"
-import srn from "../assets/images/srn.jpg"
-import shrv from "../assets/images/shourav.jpg"
-import bkrm from "../assets/images/bikrom.jpg"
+import sajal from "../assets/images/sajal.jpg";
+import taufiq from "../assets/images/toufiq.jpg";
+import srn from "../assets/images/srn.jpg";
+import shrv from "../assets/images/shourav.jpg";
+import bkrm from "../assets/images/bikrom.jpg";
 
 export const TEAM_LIST_TWO = [
   {
@@ -158,6 +158,8 @@ export const TEAM_LIST_ONE = [
     src: sajal,
     title: "Sajal Saha",
     designation: "Founder & CEO",
+    fbLink: "https://www.facebook.com/sajal.saha.july",
+    lnLink: "https://www.linkedin.com/in/sajal-saha-93677113b/",
   },
   {
     id: 2,
@@ -165,6 +167,8 @@ export const TEAM_LIST_ONE = [
     src: taufiq,
     title: "Toufiq Ul Aalam",
     designation: "Lead Operation",
+    fbLink: "https://www.facebook.com/toufiqulalam89",
+    lnLink: "https://www.linkedin.com/in/toufiqalam/",
   },
   {
     id: 3,
@@ -172,6 +176,8 @@ export const TEAM_LIST_ONE = [
     src: bkrm,
     title: "Pronab Halder",
     designation: "CTO",
+    fbLink: "https://www.facebook.com/vikramhalder103?mibextid=ZbWKwL",
+    lnLink: "https://www.linkedin.com/in/vikramhalder?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     id: 4,
@@ -179,6 +185,8 @@ export const TEAM_LIST_ONE = [
     src: srn,
     title: "Eftekhar Soron",
     designation: "Creative Coder",
+    fbLink: "https://www.facebook.com/iftekhar.jahan.soron.2024/",
+    lnLink: "https://www.linkedin.com/in/iftekhar-jahan-soron-311626244/",
   },
   {
     id: 5,
@@ -186,5 +194,7 @@ export const TEAM_LIST_ONE = [
     src: shrv,
     title: "Sourov Sarker",
     designation: "Creative coder",
+    fbLink: "https://www.facebook.com/sourov82?mibextid=ZbWKwL",
+    lnLink: "https://www.linkedin.com/in/vikramhalder?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
 ];
