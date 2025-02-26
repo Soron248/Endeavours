@@ -17,7 +17,7 @@ const month = months[date.getMonth()]; // getMonth() returns a zero-based index
 // Format the date as "14, Sept."
 const formattedDate = `${day}, ${month}`;
   return (
-    <div className="blog-post-item">
+    <div className="blog-post-item" style={{boxShadow: "10px 10px 15px 7px #0000001a"}}>
       <div className="blog-post-thumb">
         <Link to={`/blog-details/${blog.id}`}>
           <img src={blog.featured_images[0].blog_image} alt="" />
