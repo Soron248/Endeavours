@@ -8228,6 +8228,8 @@ label {
   cursor: pointer;
   filter: grayscale(100%);
   opacity: 0.5;
+  width: 180px;
+  height: 100px;
 }
 .brand-item:hover img {
   filter: grayscale(0);

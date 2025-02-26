@@ -61,7 +61,7 @@ const HomeFive = () => {
       <BlogPostArea />
 
       {/* brand-area */}
-      {/* <BrandOne /> */}
+      <BrandOne />
     </Layout>
   );
 };
