@@ -36,6 +36,7 @@ import { useWow } from "./lib/hooks/useWow";
 import { useAos } from "./lib/hooks/useAos";
 import { useJarallax } from "./lib/hooks/useJarallax";
 import {SERVICES_DETAILS_LIST} from "../src/mocks/services"
+import GTMPageView from "./pages/GTMPageView";
 
 function App() {
   useWow();
@@ -58,6 +59,7 @@ function App() {
 
   return (
     <>
+    <GTMPageView />
       <Routes>
         <Route path="/" element={<HomeFive />} />
         {/* <Route path="home-2" element={<HomeTwo />} />
