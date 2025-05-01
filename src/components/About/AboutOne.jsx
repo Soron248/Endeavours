@@ -1,11 +1,19 @@
 import React from "react";
-import ABOUT_IMG01 from "../../assets/images/bgSajal.webp"
-import ABOUT_IMG_SHAPE01 from "../../assets/images/sajal.jpg"
-import ABOUT_IMG_SHAPE02 from "../../assets/images/dots.png"
+import ABOUT_IMG01 from "../../assets/images/bgSajal.webp";
+import ABOUT_IMG_SHAPE01 from "../../assets/images/sajal.jpg";
+import ABOUT_IMG_SHAPE02 from "../../assets/images/dots.png";
+import { Helmet } from "react-helmet";
 
 export const AboutOne = () => {
   return (
     <section className="about-area about-bg">
+      <Helmet>
+        <title>About Page</title>
+        <meta name="description" content={"About page content"} />
+        <meta property="og:title" content={"About page"} />
+        <meta name="keywords" content={"About page content"} />
+      </Helmet>
+
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-5">
@@ -22,11 +30,14 @@ export const AboutOne = () => {
                   What We are Doing
                 </span>
                 <h2 className="title tg-element-title">
-                Empowering Businesses with Comprehensive Solutions: Digital Marketing, Web Design, Consultancy, and Import Services
+                  Empowering Businesses with Comprehensive Solutions: Digital
+                  Marketing, Web Design, Consultancy, and Import Services
                 </h2>
               </div>
               <p>
-              Offering expert digital marketing, web design, and consultancy services. Your trusted partner in business growth and global trade solutions
+                Offering expert digital marketing, web design, and consultancy
+                services. Your trusted partner in business growth and global
+                trade solutions
               </p>
             </div>
           </div>

@@ -12,6 +12,7 @@ import { VideoPlayerOne } from "../../components/VideoPlayers/VideoPlayerOne";
 import { BlogAuthorInfo } from "../../components/BlogAreas/BlogAuthorInfo";
 import { BlogComments } from "../../components/BlogAreas/BlogComments";
 import { BlogCommentForm } from "../../components/BlogAreas/BlogCommentForm";
+import { Helmet } from "react-helmet";
 
 const BlogDetailsPage = () => {
   const { id } = useParams();
@@ -62,8 +63,20 @@ const day = date.getDate();
 const month = months[date.getMonth()];
 const year = date.getFullYear(); 
 
+const metaKeywords = blog?.meta_keywords?.map((keyword) => keyword.name).join(", ") || "";
+
+
   return (
     <Layout breadcrumb={"Blog Details"} title={"Blog Details"}>
+                    <Helmet>
+          <title>{blog.meta_title || "Blog Details page"}</title>
+          <meta name="description" content={blog.meta_description || "Blog content"} />
+          <meta
+            property="og:title"
+            content={`${blog.meta_title || "Blog Details page"}`}
+          />
+          <meta name="keywords" content={metaKeywords || "Blog content"} />
+        </Helmet>
       <BlogPageWrapper>
         {/* image */}
         <div className="blog-details-thumb">

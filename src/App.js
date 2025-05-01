@@ -96,6 +96,8 @@ function App() {
         <Route path="team-details" element={<TeamDetailsPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog-details/:id" element={<BlogDetailsPage />} />
+
+        
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

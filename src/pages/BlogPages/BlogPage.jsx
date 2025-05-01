@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Layout } from "../../layouts/Layout";
 import { BlogPageWrapper } from "../../components/BlogAreas/BlogPageWrapper";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
@@ -11,14 +12,16 @@ const BlogPage = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('https://endeavours.pythonanywhere.com/api/blogs/');
+        const response = await fetch(
+          "https://endeavours.pythonanywhere.com/api/blogs/"
+        );
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
         setBlogs(data);
       } catch (error) {
-        console.error('Error fetching blogs:', error);
+        console.error("Error fetching blogs:", error);
       }
     };
 
@@ -39,13 +42,33 @@ const BlogPage = () => {
 
   return (
     <Layout breadcrumb={"Blog"} title={"Latest Blog"}>
+      <Helmet>
+        <title>Blog Page</title>
+        <meta name="description" content={"Blog page content"} />
+        <meta property="og:title" content={"Blog page"} />
+        <meta name="keywords" content={"Blog page content"} />
+      </Helmet>
+
       <BlogPageWrapper>
         <div className="blog-post-wrap">
           <div className="row">
             {currentBlogs.map((blog) => {
               let dateString = blog.created_at;
               let date = new Date(dateString);
-              const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'Jun.', 'Jul.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+              const months = [
+                "Jan.",
+                "Feb.",
+                "Mar.",
+                "Apr.",
+                "May.",
+                "Jun.",
+                "Jul.",
+                "Aug.",
+                "Sept.",
+                "Oct.",
+                "Nov.",
+                "Dec.",
+              ];
               const day = date.getDate();
               const month = months[date.getMonth()];
               const formattedDate = `${day}, ${month}`;
@@ -57,13 +80,18 @@ const BlogPage = () => {
                       <Link to={`/blog-details/${blog.id}`}>
                         <img src={blog.featured_images[0].blog_image} alt="" />
                       </Link>
-                      <Link to={`/blog-details/${blog.id}`} className="tag tag-two">
+                      <Link
+                        to={`/blog-details/${blog.id}`}
+                        className="tag tag-two"
+                      >
                         {blog.categories[0].name}
                       </Link>
                     </div>
                     <div className="blog-post-content-two">
                       <h2 className="title">
-                        <Link to={`/blog-details/${blog.id}`}>{blog.title}</Link>
+                        <Link to={`/blog-details/${blog.id}`}>
+                          {blog.title}
+                        </Link>
                       </h2>
                       <p className="truncate-text">{blog.content}</p>
                       <div className="blog-meta">
@@ -90,29 +118,59 @@ const BlogPage = () => {
           <div className="pagination-wrap mt-30">
             <nav aria-label="Page navigation example">
               <ul className="pagination list-wrap">
-                <li className="page-item" >
-                  <button style={{backgroundColor:"transparent",border:"none",outline:"none"}} onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1 && true}>
-                  <a className="page-link" href="#" aria-disabled={currentPage === 1 && true}>
+                <li className="page-item">
+                  <button
+                    style={{
+                      backgroundColor: "transparent",
+                      border: "none",
+                      outline: "none",
+                    }}
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1 && true}
+                  >
+                    <a
+                      className="page-link"
+                      href="#"
+                      aria-disabled={currentPage === 1 && true}
+                    >
                       <i className="fas fa-angle-double-left"></i>
                     </a>
                   </button>
-                  
                 </li>
                 {[...Array(totalPages)].map((_, index) => (
-                  <li key={index} className={`page-item ${currentPage === index + 1 ? 'active' : ''}`}>
-                    <a className="page-link" href="#" onClick={() => handlePageChange(index + 1)}>
+                  <li
+                    key={index}
+                    className={`page-item ${
+                      currentPage === index + 1 ? "active" : ""
+                    }`}
+                  >
+                    <a
+                      className="page-link"
+                      href="#"
+                      onClick={() => handlePageChange(index + 1)}
+                    >
                       {index + 1}
                     </a>
                   </li>
                 ))}
-                <li className="page-item" >
-                  
-                  <button style={{backgroundColor:"transparent",border:"none",outline:"none"}} onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1 && true}>
-                  <a className="page-link" href="#" aria-disabled={currentPage === totalPages}>
-                    <i className="fas fa-angle-double-right"></i>
-                  </a>
+                <li className="page-item">
+                  <button
+                    style={{
+                      backgroundColor: "transparent",
+                      border: "none",
+                      outline: "none",
+                    }}
+                    onClick={() => handlePageChange(currentPage - 1)}
+                    disabled={currentPage === 1 && true}
+                  >
+                    <a
+                      className="page-link"
+                      href="#"
+                      aria-disabled={currentPage === totalPages}
+                    >
+                      <i className="fas fa-angle-double-right"></i>
+                    </a>
                   </button>
-                  
                 </li>
               </ul>
             </nav>

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { AboutOne } from "../../components/About/AboutOne";
 import { AboutTwo } from "../../components/About/AboutTwo";
 import { BlogPostArea } from "../../components/BlogAreas/BlogPostArea";
@@ -18,6 +19,16 @@ import { Layout } from "../../layouts/Layout";
 const HomeFive = () => {
   return (
     <Layout header={1}>
+      <Helmet>
+          <title>Home Page</title>
+          <meta name="description" content={"Home page content"} />
+          <meta
+            property="og:title"
+            content={"Home page"}
+          />
+          <meta name="keywords" content={"Home page content"} />
+        </Helmet>
+
       {/* banner-area */}
       <SliderAreaOne />
 
