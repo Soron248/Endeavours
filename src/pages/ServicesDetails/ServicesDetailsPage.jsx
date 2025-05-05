@@ -5,7 +5,7 @@ import { CHECK_ICON, SD_VIDEO_IMG, SERVICES_DETAILS01 } from "../../lib/assets";
 import { ServicesDetailsWrapper } from "../../components/ServicesDetails/ServicesDetailsWrapper";
 import { VideoPlayerOne } from "../../components/VideoPlayers/VideoPlayerOne";
 import { BrandSeven } from "../../components/Brand/BrandSeven";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet"; // Import Helmet
 
@@ -15,6 +15,10 @@ const ServicesDetailsPage = () => {
   const [serviceDetails, setServiceDetails] = useState(null); // To store the fetched service details
   const [loading, setLoading] = useState(true); // For loading state
   const [error, setError] = useState(null); // For error handling
+  
+  const location = useLocation();
+  
+  const eventName = location.pathname.slice(1);
 
   useEffect(() => {
     if (id) {
@@ -57,6 +61,19 @@ const ServicesDetailsPage = () => {
   // Extract meta keywords from the service details
   const metaKeywords = serviceDetails?.meta_keywords?.map((keyword) => keyword.name).join(", ") || "";
   console.log(id)
+
+  
+      useEffect(() => {
+        if (window.dataLayer && serviceDetails) {
+          window.dataLayer.push({
+            event: serviceDetails.meta_title || "Home",
+            page_path: location.pathname + location.search,
+            page_title: (serviceDetails.meta_title || "Home"), 
+            serviceName: serviceDetails.meta_title || "",
+            serviceID: id || ""
+          });
+        }
+      }, [serviceDetails]);
   
   return (
     <Layout breadcrumb={"Services"} title={"Service Details"}>

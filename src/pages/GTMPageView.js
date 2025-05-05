@@ -13,7 +13,9 @@ const GTMPageView = () => {
       window.dataLayer.push({
         event: eventName || "Home",
         page_path: location.pathname + location.search,
-        page_title: (eventName || "Home") + " page", 
+        page_title: (eventName || "Home") + " page",
+        serviceName:  "",
+        serviceID: "",
       });
     }
   }, [location]);
