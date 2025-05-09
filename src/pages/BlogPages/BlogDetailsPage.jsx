@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Layout } from "../../layouts/Layout";
 import { BlogPageWrapper } from "../../components/BlogAreas/BlogPageWrapper";
-import { Link,useParams  } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import {
   BLOG_AVATAR01,
   BLOG_DETAILS01,
@@ -19,13 +19,15 @@ const BlogDetailsPage = () => {
   const [blog, setBlog] = useState(null); // State to store the blog details
   const [loading, setLoading] = useState(true); // State to handle loading
   const [error, setError] = useState(null); // State to handle errors
-
-    // Fetch blog details when the component mounts or when the id changes
+  const location = useLocation();
+  // Fetch blog details when the component mounts or when the id changes
   const fetchBlogDetails = async (id) => {
     try {
-      const response = await fetch(`https://endeavours.pythonanywhere.com/api/blogs/${id}/`);
+      const response = await fetch(
+        `https://endeavours.pythonanywhere.com/api/blogs/${id}/`
+      );
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       const data = await response.json();
       setBlog(data); // Set the blog data to state
@@ -36,9 +38,19 @@ const BlogDetailsPage = () => {
     }
   };
 
-  useEffect(() => {    
+  useEffect(() => {
     fetchBlogDetails(id);
   }, [id]); // Re-run the effect if the blog ID changes
+
+  useEffect(() => {
+    if (window.dataLayer && blog) {
+      window.dataLayer.push({
+        event: "blog content",
+        page_path: location.pathname + location.search,
+        page_title: blog.title,
+      });
+    }
+  }, [blog]);
 
   if (loading) {
     return <p>Loading...</p>;
@@ -48,35 +60,51 @@ const BlogDetailsPage = () => {
     return <p>Error: {error}</p>;
   }
 
-  blog && console.log(blog)
+  blog && console.log(blog);
 
   let dateString = blog.created_at;
 
-// Convert to a JavaScript Date object
-let date = new Date(dateString);
+  // Convert to a JavaScript Date object
+  let date = new Date(dateString);
 
-// Define an array of month names
-const months = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May.', 'Jun.', 'Jul.', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+  // Define an array of month names
+  const months = [
+    "Jan.",
+    "Feb.",
+    "Mar.",
+    "Apr.",
+    "May.",
+    "Jun.",
+    "Jul.",
+    "Aug.",
+    "Sept.",
+    "Oct.",
+    "Nov.",
+    "Dec.",
+  ];
 
-// Get the day and month from the date object
-const day = date.getDate();
-const month = months[date.getMonth()];
-const year = date.getFullYear(); 
+  // Get the day and month from the date object
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
 
-const metaKeywords = blog?.meta_keywords?.map((keyword) => keyword.name).join(", ") || "";
-
+  const metaKeywords =
+    blog?.meta_keywords?.map((keyword) => keyword.name).join(", ") || "";
 
   return (
     <Layout breadcrumb={"Blog Details"} title={"Blog Details"}>
-                    <Helmet>
-          <title>{blog.meta_title || "Blog Details page"}</title>
-          <meta name="description" content={blog.meta_description || "Blog content"} />
-          <meta
-            property="og:title"
-            content={`${blog.meta_title || "Blog Details page"}`}
-          />
-          <meta name="keywords" content={metaKeywords || "Blog content"} />
-        </Helmet>
+      <Helmet>
+        <title>{blog.meta_title || "Blog Details page"}</title>
+        <meta
+          name="description"
+          content={blog.meta_description || "Blog content"}
+        />
+        <meta
+          property="og:title"
+          content={`${blog.meta_title || "Blog Details page"}`}
+        />
+        <meta name="keywords" content={metaKeywords || "Blog content"} />
+      </Helmet>
       <BlogPageWrapper>
         {/* image */}
         <div className="blog-details-thumb">
@@ -90,19 +118,21 @@ const metaKeywords = blog?.meta_keywords?.map((keyword) => keyword.name).join(",
           <div className="blog-meta-three">
             <ul className="list-wrap">
               <li>
-                <i className="far fa-calendar"></i>{day} {month} {year}
+                <i className="far fa-calendar"></i>
+                {day} {month} {year}
               </li>
               <li>
                 <img src={BLOG_AVATAR01} alt="" />
-                by <Link to={`/blog-details/${blog.id}`}>{blog.created_by}</Link>
+                by{" "}
+                <Link to={`/blog-details/${blog.id}`}>{blog.created_by}</Link>
               </li>
-              {blog.categories.map((t,i)=>{
+              {blog.categories.map((t, i) => {
                 return (
                   <li key={i}>
-                <i className="fas fa-tags"></i>
-                <Link to="/blog">{t.name} </Link>
-              </li>
-                )
+                    <i className="fas fa-tags"></i>
+                    <Link to="/blog">{t.name} </Link>
+                  </li>
+                );
               })}
               <li>
                 <i className="flaticon-speech-bubble"></i>
@@ -111,9 +141,7 @@ const metaKeywords = blog?.meta_keywords?.map((keyword) => keyword.name).join(",
             </ul>
           </div>
 
-          <p>
-            {blog.content}
-          </p>
+          <p>{blog.content}</p>
           {/* <p>
             eed a little help from our friends from time to time. Although we
             offer the one-stop convenience of annery integrated range of legal,
@@ -188,13 +216,13 @@ const metaKeywords = blog?.meta_keywords?.map((keyword) => keyword.name).join(",
                 <div className="post-tags">
                   <h5 className="title">Tags:</h5>
                   <ul className="list-wrap">
-                  {blog.tags.map((t,i)=>{
-                return (
-                  <li key={i}>
-                      <a href="#">{t.name}</a>
-                    </li>
-                )
-              })}
+                    {blog.tags.map((t, i) => {
+                      return (
+                        <li key={i}>
+                          <a href="#">{t.name}</a>
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </div>
@@ -235,7 +263,7 @@ const metaKeywords = blog?.meta_keywords?.map((keyword) => keyword.name).join(",
         {/* <BlogAuthorInfo /> */}
 
         {/* comments */}
-        <BlogComments comments={blog.comments}  />
+        <BlogComments comments={blog.comments} />
 
         {/* comment form */}
         <BlogCommentForm blog={blog} />

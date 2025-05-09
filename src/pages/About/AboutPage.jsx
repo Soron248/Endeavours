@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout } from "../../layouts/Layout";
 import { AboutSeven } from "../../components/About/AboutSeven";
 import { FeatureFive } from "../../components/Features/FeatureFive";
@@ -9,6 +9,15 @@ import { TeamAreaOne } from "../../components/TeamAreas/TeamAreaOne";
 import { Helmet } from "react-helmet";
 
 const AboutPage = () => {
+    useEffect(() => {
+            if (window.dataLayer) {
+              window.dataLayer.push({
+                event: "Endeavours About",
+                page_path: "about",
+                page_title: "About page", 
+              });
+            }
+          }, []);
   return (
     <Layout breadcrumb={"About"} title={"About us"}>
       <Helmet>

@@ -66,7 +66,7 @@ const ServicesDetailsPage = () => {
       useEffect(() => {
         if (window.dataLayer && serviceDetails) {
           window.dataLayer.push({
-            event: serviceDetails.meta_title || "Home",
+            event: "view content",
             page_path: location.pathname + location.search,
             page_title: (serviceDetails.meta_title || "Home"), 
             serviceName: serviceDetails.meta_title || "",

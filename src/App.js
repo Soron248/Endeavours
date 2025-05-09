@@ -59,7 +59,7 @@ function App() {
 
   return (
     <>
-    <GTMPageView />
+    {/* <GTMPageView /> */}
       <Routes>
         <Route path="/" element={<HomeFive />} />
         {/* <Route path="home-2" element={<HomeTwo />} />

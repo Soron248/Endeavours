@@ -15,8 +15,18 @@ import { SliderAreaOne } from "../../components/SliderAreas/SliderAreaOne";
 import { TeamAreaOne } from "../../components/TeamAreas/TeamAreaOne";
 import { TestimonialAreaOne } from "../../components/TestimonialAreas/TestimonialAreaOne";
 import { Layout } from "../../layouts/Layout";
+import { useEffect } from "react";
 
 const HomeFive = () => {
+  useEffect(() => {
+          if (window.dataLayer) {
+            window.dataLayer.push({
+              event: "Endeavours Home",
+              page_path: "/",
+              page_title: "Home page", 
+            });
+          }
+        }, []);
   return (
     <Layout header={1}>
       <Helmet>
