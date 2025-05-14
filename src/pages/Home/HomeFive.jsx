@@ -19,25 +19,23 @@ import { useEffect } from "react";
 
 const HomeFive = () => {
   useEffect(() => {
-          if (window.dataLayer) {
-            window.dataLayer.push({
-              event: "Endeavours Home",
-              page_path: "/",
-              page_title: "Home page", 
-            });
-          }
-        }, []);
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: "Home",
+        page_path: "/",
+        page_title: "Home page",
+      });
+    }
+  }, []);
+
   return (
     <Layout header={1}>
       <Helmet>
-          <title>Home Page</title>
-          <meta name="description" content={"Home page content"} />
-          <meta
-            property="og:title"
-            content={"Home page"}
-          />
-          <meta name="keywords" content={"Home page content"} />
-        </Helmet>
+        <title> HOME-ENDEAVOURS CORPORATION LIMITED</title>
+        <meta name="description" content={"Home page content"} />
+        <meta property="og:title" content={"Home page"} />
+        <meta name="keywords" content={"Home page content"} />
+      </Helmet>
 
       {/* banner-area */}
       <SliderAreaOne />

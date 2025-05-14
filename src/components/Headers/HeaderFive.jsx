@@ -5,6 +5,7 @@ import { LOGO } from "../../lib/assets";
 import logo from "../../assets/img/logo/logo.png"
 import { NavMenus } from "./NavMenus";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export const HeaderFive = () => {
   // menu sticky
@@ -12,6 +13,7 @@ export const HeaderFive = () => {
 
   return (
     <header className="header-style-five transparent-header">
+
       <div id="sticky-header" className="menu-area">
         <div className="container">
           <div className="row">

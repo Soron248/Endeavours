@@ -68,12 +68,6 @@ export const ContactAreaOne = () => {
 
   return (
     <section className="contact-area contact-bg">
-      <Helmet>
-        <title>Contact Page</title>
-        <meta name="description" content={"Contact page content"} />
-        <meta property="og:title" content={"Contact page"} />
-        <meta name="keywords" content={"Contact page content"} />
-      </Helmet>
 
       <div className="container">
         <div className="row align-items-center">

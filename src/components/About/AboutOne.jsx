@@ -7,12 +7,6 @@ import { Helmet } from "react-helmet";
 export const AboutOne = () => {
   return (
     <section className="about-area about-bg">
-      <Helmet>
-        <title>About Page</title>
-        <meta name="description" content={"About page content"} />
-        <meta property="og:title" content={"About page"} />
-        <meta name="keywords" content={"About page content"} />
-      </Helmet>
 
       <div className="container">
         <div className="row align-items-center">

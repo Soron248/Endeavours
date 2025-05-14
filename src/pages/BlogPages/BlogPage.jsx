@@ -43,7 +43,8 @@ const BlogPage = () => {
   return (
     <Layout breadcrumb={"Blog"} title={"Latest Blog"}>
       <Helmet>
-        <title>Blog Page</title>
+        <title> BLOG-ENDEAVOURS CORPORATION LIMITED
+        </title>
         <meta name="description" content={"Blog page content"} />
         <meta property="og:title" content={"Blog page"} />
         <meta name="keywords" content={"Blog page content"} />

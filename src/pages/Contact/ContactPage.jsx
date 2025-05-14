@@ -10,7 +10,7 @@ const ContactPage = () => {
     useEffect(() => {
             if (window.dataLayer) {
               window.dataLayer.push({
-                event: "Endeavours Contact",
+                event: "Contact",
                 page_path: "/contact",
                 page_title: "Contact page", 
               });
@@ -19,7 +19,7 @@ const ContactPage = () => {
   return (
     <Layout breadcrumb={"Contact"} title={"Contact Us"}>
       <Helmet>
-        <title>Contact Page</title>
+        <title>CONTACT-ENDEAVOURS CORPORATION LIMITED</title>
         <meta name="description" content={"Contact page content"} />
         <meta property="og:title" content={"Contact page"} />
         <meta name="keywords" content={"Contact page content"} />

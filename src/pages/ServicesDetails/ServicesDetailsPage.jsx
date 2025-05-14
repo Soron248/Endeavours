@@ -68,12 +68,14 @@ const ServicesDetailsPage = () => {
           window.dataLayer.push({
             event: "view content",
             page_path: location.pathname + location.search,
-            page_title: (serviceDetails.meta_title || "Home"), 
-            serviceName: serviceDetails.meta_title || "",
+            page_title: (serviceDetails.name || "Home"), 
+            serviceName: serviceDetails.name || "",
             serviceID: id || ""
           });
         }
       }, [serviceDetails]);
+
+      serviceDetails && console.log(serviceDetails);
   
   return (
     <Layout breadcrumb={"Services"} title={"Service Details"}>

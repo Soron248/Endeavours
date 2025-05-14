@@ -21,7 +21,8 @@ const AboutPage = () => {
   return (
     <Layout breadcrumb={"About"} title={"About us"}>
       <Helmet>
-        <title>About Page</title>
+        <title> ABOUT-ENDEAVOURS CORPORATION LIMITED
+        </title>
         <meta name="description" content={"About page content"} />
         <meta property="og:title" content={"About page"} />
         <meta name="keywords" content={"About page content"} />
